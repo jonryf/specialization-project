@@ -1,4 +1,4 @@
-package no.ntnu.tdt4501.implementation.skiplist;
+package no.ntnu.tdt4501.implementation.queue.skiplist;
 
 import java.util.AbstractCollection;
 import java.util.AbstractMap;
@@ -17,8 +17,8 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.ReentrantLock;
 
-import no.ntnu.tdt4501.implementation.skiplist.abstractions.CompositionalMap;
-import no.ntnu.tdt4501.implementation.skiplist.abstractions.MaintenanceAlg;
+import no.ntnu.tdt4501.implementation.queue.skiplist.abstractions.CompositionalMap;
+import no.ntnu.tdt4501.implementation.queue.skiplist.abstractions.MaintenanceAlg;
 
 /**
  * The No Hot Spot Non-Blocking Skip List

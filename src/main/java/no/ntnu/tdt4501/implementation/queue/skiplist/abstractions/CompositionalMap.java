@@ -1,4 +1,4 @@
-package no.ntnu.tdt4501.implementation.skiplist.abstractions;
+package no.ntnu.tdt4501.implementation.queue.skiplist.abstractions;
 
 import java.util.Map;
 
