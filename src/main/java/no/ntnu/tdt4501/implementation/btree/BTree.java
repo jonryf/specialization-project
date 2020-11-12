@@ -33,4 +33,8 @@ public abstract class BTree<I, T> {
      */
     public abstract void delete(I key);
 
+    public void shutdown(){
+
+    }
+
 }

@@ -6,10 +6,10 @@ import java.util.List;
 
 @SuppressWarnings("Duplicates")
 public class LeafNode<K extends Comparable<? super K>, V> extends Node<K, V> {
-    private List<K> keys;
-    private List<V> values;
+    private volatile List<K> keys;
+    private volatile List<V> values;
     private final BPlussTree<K,V> tree;
-    private LeafNode next;
+    private volatile LeafNode next;
 
 
     LeafNode(BPlussTree<K, V> tree) {

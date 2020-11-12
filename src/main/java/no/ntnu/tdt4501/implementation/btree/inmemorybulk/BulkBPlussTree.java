@@ -1,17 +1,19 @@
 package no.ntnu.tdt4501.implementation.btree.inmemorybulk;
 
+import no.ntnu.tdt4501.Settings;
 import no.ntnu.tdt4501.implementation.btree.BTree;
 
 import java.util.LinkedList;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class HBTree<K extends Comparable<? super K>, V> extends BTree<K, V> {
-    private static final int THREADS = 4;
+
+public class BulkBPlussTree<K extends Comparable<? super K>, V> extends BTree<K, V> {
     private ConcurrentHashMap<Integer, BTreeThread> threads = new ConcurrentHashMap<>();
     private int threadIndex = 0;
 
-    public HBTree(){
-        for(int t = 0; t < THREADS; t++){
+    public BulkBPlussTree(){
+        System.out.println("USING: " + Settings.THREADS);
+        for(int t = 0; t < Settings.THREADS; t++){
             BTreeThread thread = new BTreeThread();
             threads.put(t, thread);
         }
@@ -42,7 +44,7 @@ public class HBTree<K extends Comparable<? super K>, V> extends BTree<K, V> {
             threadIndex = 0;
         }
         threadIndex += 1;
-        return threads.get(threadIndex % THREADS);
+        return threads.get(threadIndex % Settings.THREADS);
     }
 
     class Item<K, V> {
@@ -102,7 +104,6 @@ public class HBTree<K extends Comparable<? super K>, V> extends BTree<K, V> {
 
         @Override
         public void run() {
-            System.out.println("Runner: X");
             while (!this.shutdown) {
                 if (!this.items.isEmpty()) {
 
@@ -112,7 +113,7 @@ public class HBTree<K extends Comparable<? super K>, V> extends BTree<K, V> {
                     }
                 }
             }
-            System.out.println("Queue size: " + this.items.size());
+            //System.out.println("Queue size: " + this.items.size());
         }
     }
 }

@@ -1,4 +1,4 @@
-package no.ntnu.tdt4501.implementation.btree.inmemorybulk.inmemorylocks;
+package no.ntnu.tdt4501.implementation.btree.inmemorybulk;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,8 +6,7 @@ import java.util.List;
 
 @SuppressWarnings("Duplicates")
 public class LeafNode<K extends Comparable<? super K>, V> extends Node<K, V> {
-    private volatile List<K> keys;
-    private volatile List<V> values;
+    volatile List<V> values;
     private final BPlussTree<K,V> tree;
     private volatile LeafNode next;
 

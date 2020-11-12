@@ -1,4 +1,7 @@
-package no.ntnu.tdt4501.implementation.btree.inmemorybulk.inmemorylocks;
+package no.ntnu.tdt4501.implementation.btree.inmemorybulk;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * A node in a B+-tree
@@ -7,6 +10,7 @@ package no.ntnu.tdt4501.implementation.btree.inmemorybulk.inmemorylocks;
  * @param <V> type parameter for value
  */
 abstract class Node<K, V> {
+    volatile List<K> keys;
 
     /**
      * Search for a value in this node, or any of its child nodes.
@@ -76,5 +80,6 @@ abstract class Node<K, V> {
      * @return number of keys
      */
     abstract int keyNumber();
+
 
 }

@@ -14,8 +14,8 @@ import java.util.List;
  */
 @SuppressWarnings("Duplicates")
 public class InternalNode <K extends Comparable<? super K>, V> extends Node<K, V> {
-    List<Node<K, V>> children;
-    List<K> keys;
+    volatile List<Node<K, V>> children;
+    volatile List<K> keys;
     private final BPlussTree<K,V> tree;
 
     InternalNode(BPlussTree<K, V> tree) {
@@ -61,7 +61,10 @@ public class InternalNode <K extends Comparable<? super K>, V> extends Node<K, V
     public void insertValue(K key, V value, int branchingFactor) {
         Node<K, V> child = getChild(key);
         child.insertValue(key, value, branchingFactor);
+        updateChild(child, branchingFactor);
+    }
 
+    private synchronized void updateChild(Node<K, V> child, int branchingFactor){
         if (child.isOverflow(branchingFactor)) {
             Node<K, V> sibling = child.split();
             insertChild(sibling.getFirstLeafKey(), sibling);

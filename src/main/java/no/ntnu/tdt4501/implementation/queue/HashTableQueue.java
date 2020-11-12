@@ -11,6 +11,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
+@SuppressWarnings("Duplicates")
 public class HashTableQueue<K extends Comparable<? super K>, V> extends Queue<K, V> {
 
     public ConcurrentHashMap<K,V> hashtable;
@@ -62,7 +63,10 @@ public class HashTableQueue<K extends Comparable<? super K>, V> extends Queue<K,
             return null;
         }
         List<Map.Entry<K, V>> data =
-                this.hashtable.entrySet().parallelStream().sorted(Comparator.comparing(Map.Entry::getKey)).collect(Collectors.toList());
+                this.hashtable.entrySet()
+                        .parallelStream()
+                        .sorted(Comparator.comparing(Map.Entry::getKey))
+                        .collect(Collectors.toList());
         return data;
 
 

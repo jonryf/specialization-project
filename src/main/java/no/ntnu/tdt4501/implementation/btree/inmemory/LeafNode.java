@@ -6,13 +6,13 @@ import java.util.List;
 
 @SuppressWarnings("Duplicates")
 public class LeafNode<K extends Comparable<? super K>, V> implements Node<K, V> {
-    private final BPlussTree<K,V> tree;
+    private final InMemoryBPlussTree<K,V> tree;
     private List<K> keys;
     private List<V> values;
     private LeafNode next;
 
 
-    LeafNode(BPlussTree<K, V> tree) {
+    LeafNode(InMemoryBPlussTree<K, V> tree) {
         this.keys = new ArrayList<>();
         this.tree = tree;
         this.values = new ArrayList<>();

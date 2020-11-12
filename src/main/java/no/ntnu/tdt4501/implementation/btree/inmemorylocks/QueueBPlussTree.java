@@ -1,6 +1,6 @@
-package no.ntnu.tdt4501.implementation.btree;
+package no.ntnu.tdt4501.implementation.btree.inmemorylocks;
 
-import no.ntnu.tdt4501.implementation.btree.inmemorylocks.BPlussTree;
+import no.ntnu.tdt4501.implementation.btree.BTree;
 import no.ntnu.tdt4501.implementation.queue.HashTableQueue;
 import no.ntnu.tdt4501.implementation.queue.Queue;
 import no.ntnu.tdt4501.implementation.queue.SinglyLinkedQueue;
@@ -13,29 +13,34 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.Future;
 import java.util.stream.Collectors;
 
-@SuppressWarnings("Duplicates")
-public class HBTree<K extends Comparable<? super K>, V> extends BTree<K, V> {
-    private final static int THREADS = 1;
+import static no.ntnu.tdt4501.Settings.THREADS;
 
-    private ExecutorService executorService;
+@SuppressWarnings("Duplicates")
+public class QueueBPlussTree<K extends Comparable<? super K>, V> extends BTree<K, V> {
+
+    //private ExecutorService executorService;
+    public  ForkJoinPool executorService;
+
     private Queue<K, V> queue;
     private BTree<K, V> btree;
     private boolean shutdown = false;
 
 
-    public HBTree() {
+    public QueueBPlussTree() {
         this(new HashTableQueue<>(), new BPlussTree<>());
     }
 
-    public HBTree(Queue<K, V> queue, BTree<K, V> btree) {
-        this.executorService = Executors.newFixedThreadPool(THREADS);
+    public QueueBPlussTree(Queue<K, V> queue, BTree<K, V> btree) {
+        //this.executorService = Executors.newFixedThreadPool(THREADS);
         this.queue = queue;
         this.btree = btree;
-
-        new Thread(HBTree.this::moveData).start();
+        executorService = new ForkJoinPool(THREADS);
+        executorService.execute(this::moveData3);
+        //new Thread(QueueBPlussTree.this::moveData3).start();
     }
 
     @Override
@@ -49,7 +54,7 @@ public class HBTree<K extends Comparable<? super K>, V> extends BTree<K, V> {
 
     @Override
     public void insert(K key, V value) {
-        if(this.queue.size() > 5000000){
+        if(this.queue.size() > 10000000){
             //this.btree.insert(key, value);
             this.executorService.submit(() -> {
                 this.btree.insert(key, value);
@@ -66,6 +71,7 @@ public class HBTree<K extends Comparable<? super K>, V> extends BTree<K, V> {
         //this.btree.delete(key); //TODO
     }
 
+    @Override
     public void shutdown(){
         this.shutdown = true;
         this.executorService.shutdown();
@@ -81,7 +87,7 @@ public class HBTree<K extends Comparable<? super K>, V> extends BTree<K, V> {
             if(data != null){
                 int size = data.size();
 
-                int partitions = 4;
+                int partitions = 10;
                 for(int i = 0; i<partitions; i++) {
                     for (int thread = 0; thread < THREADS; thread++) {
 

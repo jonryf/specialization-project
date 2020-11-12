@@ -6,11 +6,11 @@ import java.util.List;
 
 @SuppressWarnings("Duplicates")
 public class InternalNode <K extends Comparable<? super K>, V> implements Node<K, V> {
-    private final BPlussTree<K, V> tree;
+    private final InMemoryBPlussTree<K, V> tree;
     List<Node<K, V>> children;
     List<K> keys;
 
-    InternalNode(BPlussTree<K, V> tree) {
+    InternalNode(InMemoryBPlussTree<K, V> tree) {
         this.keys = new ArrayList<>();
         this.tree = tree;
         this.children = new ArrayList<>();

@@ -7,7 +7,7 @@ public class BPlussTree<K extends Comparable<? super K>, V> extends BTree<K, V> 
 
     private int branchingFactor;
 
-    Node<K, V> root;
+    volatile Node<K, V> root;
 
     public BPlussTree(){
         this(BRANCHING_FACTOR);

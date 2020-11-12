@@ -1,8 +1,9 @@
-package no.ntnu.tdt4501.implementation.btree.inmemorybulk.inmemorylocks;
+package no.ntnu.tdt4501.implementation.btree.inmemorybulk;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Internal node in a B+-tree.
@@ -15,7 +16,6 @@ import java.util.List;
 @SuppressWarnings("Duplicates")
 public class InternalNode <K extends Comparable<? super K>, V> extends Node<K, V> {
     volatile List<Node<K, V>> children;
-    volatile List<K> keys;
     private final BPlussTree<K,V> tree;
 
     InternalNode(BPlussTree<K, V> tree) {
@@ -55,6 +55,7 @@ public class InternalNode <K extends Comparable<? super K>, V> extends Node<K, V
         }
 
     }
+
 
     @SuppressWarnings("Duplicates")
     @Override
@@ -115,9 +116,6 @@ public class InternalNode <K extends Comparable<? super K>, V> extends Node<K, V
         children.subList(from, to + 1).clear();
         return sibling;
     }
-
-
-
 
     private synchronized Node<K, V> getChild(K key) {
         int loc = Collections.binarySearch(this.keys, key);

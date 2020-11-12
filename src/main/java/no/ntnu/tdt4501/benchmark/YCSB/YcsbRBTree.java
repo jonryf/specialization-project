@@ -1,7 +1,7 @@
 package no.ntnu.tdt4501.benchmark.YCSB;
 
 import no.ntnu.tdt4501.implementation.btree.BTree;
-import no.ntnu.tdt4501.implementation.btree.HBTree;
+import no.ntnu.tdt4501.implementation.btree.inmemorylocks.QueueBPlussTree;
 import no.ntnu.tdt4501.implementation.btree.inmemorylocks.BPlussTree;
 import site.ycsb.ByteIterator;
 import site.ycsb.DB;
@@ -39,8 +39,8 @@ public class YcsbRBTree extends DB {
 
     @Override
     public void cleanup(){
-        if(this.instance instanceof HBTree) {
-            ((HBTree) this.instance).shutdown();
+        if(this.instance instanceof QueueBPlussTree) {
+            ((QueueBPlussTree) this.instance).shutdown();
         }
         this.executorService.shutdown();
         long pending = inQueue.stream().filter(future -> !future.isDone()).count();
