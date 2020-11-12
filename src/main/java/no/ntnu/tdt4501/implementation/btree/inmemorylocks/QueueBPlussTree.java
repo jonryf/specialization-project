@@ -35,7 +35,7 @@ public class HBTree<K extends Comparable<? super K>, V> extends BTree<K, V> {
         this.queue = queue;
         this.btree = btree;
 
-        new Thread(HBTree.this::moveData3).start();
+        new Thread(HBTree.this::moveData).start();
     }
 
     @Override
@@ -49,7 +49,7 @@ public class HBTree<K extends Comparable<? super K>, V> extends BTree<K, V> {
 
     @Override
     public void insert(K key, V value) {
-        if(this.queue.size() > 1000000){
+        if(this.queue.size() > 5000000){
             //this.btree.insert(key, value);
             this.executorService.submit(() -> {
                 this.btree.insert(key, value);
@@ -81,7 +81,7 @@ public class HBTree<K extends Comparable<? super K>, V> extends BTree<K, V> {
             if(data != null){
                 int size = data.size();
 
-                int partitions = 20;
+                int partitions = 4;
                 for(int i = 0; i<partitions; i++) {
                     for (int thread = 0; thread < THREADS; thread++) {
 
@@ -126,44 +126,49 @@ public class HBTree<K extends Comparable<? super K>, V> extends BTree<K, V> {
     // RUNNER;
     public void moveData() {
         int elements = 0;
+        List<Future> futures = new ArrayList<>();
         while(!this.shutdown) {
-            K[] nextElements = this.queue.getNextElements(300);
-            if(nextElements != null && nextElements.length > 100000) {
-                Arrays.parallelSort(nextElements);
-                int elm = nextElements.length;
-                elements += elm;
+            if (this.queue.size() > 10000) {
+                K[] nextElements = this.queue.getNextElements(300);
+                if (nextElements != null && nextElements.length > 10000) {
+                    Arrays.parallelSort(nextElements);
+                    int elm = nextElements.length;
+                    elements += elm;
 
 
-                List<Future> futures = new ArrayList<>();
-                for(int slice = 0; slice < THREADS; slice ++) {
-                    int from = slice * elm / THREADS;
-                    int to = (1 + slice) * elm / THREADS;
-                    List<V> values = new ArrayList<>();
-                    for (int i = from; i < to; i++) {
-                        K key = nextElements[i];
-                        values.add(this.queue.search(key));
-                        this.queue.delete(key);
-                    }
-
-                    futures.add(this.executorService.submit(() -> {
+                    for (int slice = 0; slice < THREADS; slice++) {
+                        int from = slice * elm / THREADS;
+                        int to = (1 + slice) * elm / THREADS;
+                        List<V> values = new ArrayList<>();
                         for (int i = from; i < to; i++) {
                             K key = nextElements[i];
-                            this.btree.insert(key, values.get(i - from));
-                            //TODO this.queue.delete(key);
+                            values.add(this.queue.search(key));
+                            this.queue.delete(key);
                         }
+                        try {
+                            futures.add(this.executorService.submit(() -> {
+                                for (int i = from; i < to; i++) {
+                                    K key = nextElements[i];
+                                    this.btree.insert(key, values.get(i - from));
+                                    //TODO this.queue.delete(key);
+                                }
 
-                    }));
-                }
-                /*for(Future future : futures){
+                            }));
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
+                    }
+                for(Future future : futures){
                     try {
                         future.get();
                     } catch (InterruptedException | ExecutionException e) {
                         e.printStackTrace();
                     }
-                }*/
-                int inQueue = this.queue.size();
-                System.out.println("Moved elements: " + elements);
-                System.out.println("In queue: " + inQueue);
+                }
+                  /*  int inQueue = this.queue.size();
+                    System.out.println("Moved elements: " + elements);
+                    System.out.println("In queue: " + inQueue);*/
+                }
             }
 
         }
@@ -172,6 +177,8 @@ public class HBTree<K extends Comparable<? super K>, V> extends BTree<K, V> {
         System.out.println("Shutting down... \n");
         System.out.println("Moved elements: " + elements);
         System.out.println("In queue: " + inQueue);
+        long pending = futures.stream().filter(future -> !future.isDone()).count();
+        System.out.println(pending + " task are still pending");
     }
 
     public void moveData2() {
