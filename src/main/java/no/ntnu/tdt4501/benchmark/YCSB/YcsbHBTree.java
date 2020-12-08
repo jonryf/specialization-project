@@ -1,7 +1,7 @@
 package no.ntnu.tdt4501.benchmark.YCSB;
 
 import no.ntnu.tdt4501.implementation.btree.BTree;
-import no.ntnu.tdt4501.implementation.btree.inmemorybulk.BulkBPlussTree;
+import no.ntnu.tdt4501.implementation.btree.inmemoryparallel.ParallelBPlussTree;
 import site.ycsb.ByteIterator;
 import site.ycsb.DB;
 import site.ycsb.DBException;
@@ -22,14 +22,14 @@ public class YcsbHBTree extends DB {
      */
     @Override
     public void init() throws DBException {
-        this.instance = new BulkBPlussTree<>();
+        this.instance = new ParallelBPlussTree<>();
 
     }
 
     @Override
     public void cleanup(){
-        if(this.instance instanceof BulkBPlussTree) {
-            ((BulkBPlussTree) this.instance).shutdown();
+        if(this.instance instanceof ParallelBPlussTree) {
+            ((ParallelBPlussTree) this.instance).shutdown();
         }
     }
 

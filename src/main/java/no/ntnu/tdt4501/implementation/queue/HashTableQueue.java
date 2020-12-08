@@ -18,7 +18,7 @@ public class HashTableQueue<K extends Comparable<? super K>, V> extends Queue<K,
 
 
     public HashTableQueue() {
-        hashtable = new ConcurrentHashMap<>(1010000, 4f,4);
+        hashtable = new ConcurrentHashMap<>(15000);
     }
 
     @Override
@@ -33,7 +33,12 @@ public class HashTableQueue<K extends Comparable<? super K>, V> extends Queue<K,
 
     @Override
     public void delete(K key) {
-        this.hashtable.remove(key);
+         this.hashtable.remove(key);
+    }
+
+    @Override
+    public V deleteAndGetItem(K key) {
+        return this.hashtable.remove(key);
     }
 
     @SuppressWarnings("unchecked")
@@ -62,8 +67,15 @@ public class HashTableQueue<K extends Comparable<? super K>, V> extends Queue<K,
         if(this.size() < minimum){
             return null;
         }
+        ConcurrentHashMap<K,V> table;
+        synchronized (this){
+            table = this.hashtable;
+            this.hashtable = new ConcurrentHashMap<>(10000000);
+        }
+        System.out.println("Extracted: " + table.size());
+
         List<Map.Entry<K, V>> data =
-                this.hashtable.entrySet()
+                table.entrySet()
                         .parallelStream()
                         .sorted(Comparator.comparing(Map.Entry::getKey))
                         .collect(Collectors.toList());

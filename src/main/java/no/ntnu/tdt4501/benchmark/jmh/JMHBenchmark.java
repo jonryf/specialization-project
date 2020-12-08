@@ -2,16 +2,9 @@ package no.ntnu.tdt4501.benchmark.jmh;
 
 import no.ntnu.tdt4501.Settings;
 import no.ntnu.tdt4501.implementation.btree.BTree;
-import no.ntnu.tdt4501.implementation.btree.inmemory.InMemoryBPlussTree;
-import no.ntnu.tdt4501.implementation.btree.inmemorybulk.BulkBPlussTree;
-import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Mode;
-import org.openjdk.jmh.annotations.OperationsPerInvocation;
-import org.openjdk.jmh.annotations.Param;
 import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.TearDown;
-import org.openjdk.jmh.annotations.Threads;
-import org.openjdk.jmh.results.RunResult;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
@@ -19,7 +12,6 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 import org.openjdk.jmh.runner.options.TimeValue;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -32,11 +24,11 @@ import static no.ntnu.tdt4501.Settings.THREADS_TESTS;
 
 public abstract class JMHBenchmark {
     private int index = 0;
+    private int searchIndex = 0;
+    private int deleteIndex = 0;
     private ExecutorService executorService;
 
     private BTree<Integer, Integer> instance;
-
-
 
     public abstract BTree<Integer, Integer> getInstance();
 
@@ -44,21 +36,35 @@ public abstract class JMHBenchmark {
 
     public abstract int getThreads();
 
+    private boolean doInitialInsert(){
+        return false;
+    }
+
     @Setup
     public void setup() {
         THREADS = getThreads();
         this.instance = getInstance();
-        if(!this.nativeAsyncSupport()) {
-            this.executorService = Executors.newFixedThreadPool(THREADS);
+        //if(!this.nativeAsyncSupport()) {
+            this.executorService = Executors.newWorkStealingPool(THREADS);
+        //}
+        if (this.doInitialInsert()){
+            System.out.println("Start");
+            this.insert(5000000);
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("End");
         }
     }
 
 
     @TearDown
     public void tearDown() {
-        if(!this.nativeAsyncSupport()) {
+        //if(!this.nativeAsyncSupport()) {
             this.executorService.shutdown();
-        }
+        //}
         this.instance.shutdown();
 
     }
@@ -70,6 +76,16 @@ public abstract class JMHBenchmark {
             this.runInsertAsync(number);
         }
     }
+
+    public void search(int number){
+        this.runSearchAsync(number);
+    }
+
+    public void delete(int number){
+        this.runDeleteAsync(number);
+    }
+
+
 
     private void runInsertAsync(int number) {
         List<Future> futures = new ArrayList<>();
@@ -92,6 +108,38 @@ public abstract class JMHBenchmark {
         }
     }
 
+    private void runSearchAsync(int number) {
+        List<Future> futures = new ArrayList<>();
+        for(int i = 0; i< THREADS*2; i++) {
+            futures.add(searchAsync(number/(THREADS*2)));
+        }
+        for(Future future : futures){
+            try {
+                future.get();
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void runSearchSync(int count) {
+        for(int i = 0; i<count; i++) {
+            this.instance.search(searchIndex % index);
+            searchIndex += 1;
+        }
+    }
+
+    private Future searchAsync(int count) {
+        return this.executorService.submit(() -> {
+            for(int i = 0; i<count; i++) {
+                this.instance.search(searchIndex % index);
+                searchIndex += 1;
+            }
+        });
+    }
+
+
+
     private Future insertAsync(int count) {
         return this.executorService.submit(() -> {
             for(int i = 0; i<count; i++) {
@@ -102,8 +150,40 @@ public abstract class JMHBenchmark {
     }
 
 
-    public static void run(Class clazz) {
+    private void runDeleteAsync(int number) {
+        List<Future> futures = new ArrayList<>();
+        for(int i = 0; i< THREADS*2; i++) {
+            futures.add(deleteAsync(number/(THREADS*2)));
+        }
+        for(Future future : futures){
+            try {
+                future.get();
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
+    private void runDeleteSync(int count) {
+        for(int i = 0; i<count; i++) {
+            this.instance.delete(deleteIndex % index);
+            deleteIndex += 1;
+        }
+    }
+
+    private Future deleteAsync(int count) {
+        return this.executorService.submit(() -> {
+            int tempDeleteIndex = deleteIndex;
+            deleteIndex -= count;
+            for(int i = 0; i<count; i++) {
+                this.instance.delete(tempDeleteIndex % index);
+                tempDeleteIndex += 1;
+            }
+        });
+    }
+
+
+    public static void run(Class clazz) {
         for (int threads : THREADS_TESTS) {
             System.out.println("----------------------------");
             System.out.println("Testing with " + threads + " threads");
@@ -121,6 +201,7 @@ public abstract class JMHBenchmark {
                     .measurementTime(TimeValue.seconds(3))
                     .syncIterations(true)
                     .measurementIterations(1)
+                    .jvmArgs("-Xms8024m", "-Xmx8024m")
                     .mode(Mode.Throughput)
                     .param("threads", String.valueOf(threads))
                     .build();

@@ -1,4 +1,4 @@
-package no.ntnu.tdt4501.implementation.btree.inmemorybulk;
+package no.ntnu.tdt4501.implementation.btree.inmemoryparallel;
 
 import no.ntnu.tdt4501.implementation.btree.BTree;
 
@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class BPlussTree<K extends Comparable<? super K>, V> extends BTree<K, V> {
     private static final int BRANCHING_FACTOR = 128;
 
-    private int branchingFactor;
+    int branchingFactor;
 
     volatile Node<K, V> root;
 

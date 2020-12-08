@@ -1,0 +1,1032 @@
+/Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java "-javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=52362:/Applications/IntelliJ IDEA.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath /Users/jonryfetten/Programmering/Java/specialization-project/out/production/classes:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/io.github.myui/btree4j/0.9.1/7af37adac56e68cf777495da0f2a386bb4a27fa0/btree4j-0.9.1.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/site.ycsb/core/0.17.0/d47f6ddaedd1c2e531e5ed73eecdde140d4f7aa9/core-0.17.0.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.openjdk.jmh/jmh-generator-annprocess/1.20/2b42c35d1778faa701e042f7a6b58dab337dab82/jmh-generator-annprocess-1.20.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.openjdk.jmh/jmh-core/1.20/5f9f9839bda2332e9acd06ce31ad94afa7d6d447/jmh-core-1.20.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/net.openhft/affinity/3.20.0/51704f95ab198b434716721e80266cb52b96256f/affinity-3.20.0.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.17/5af35056b4d257e4b64b9e8069c0746e8b08629f/log4j-1.2.17.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/commons-cli/commons-cli/1.2/2bf96b7aa8b611c177d329452af1dc933e14501c/commons-cli-1.2.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.0.4/f029a2aefe2b3e1517573c580f948caac31b1056/commons-logging-1.0.4.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.apache.htrace/htrace-core4/4.1.0-incubating/12b3e2adda95e8c41d9d45d33db075137871d2e2/htrace-core4-4.1.0-incubating.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-mapper-asl/1.9.4/5206191b35112f50b8e25fcbd3f3b84e12e11cee/jackson-mapper-asl-1.9.4.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-core-asl/1.9.4/8d8b2a3e5bc77ee1be67d060b44ac77d48a27d6e/jackson-core-asl-1.9.4.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.hdrhistogram/HdrHistogram/2.1.4/2b0da22320f0ac0bbedc7b9df7881d9853d8a754/HdrHistogram-2.1.4.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/4.6/306816fb57cf94f108a43c95731b08934dcae15c/jopt-simple-4.6.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-math3/3.2/ec2544ab27e110d2d431bdad7d538ed509b21e62/commons-math3-3.2.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.30/b5a4b6d16ab13e34a88fae84c35cd5d68cac922c/slf4j-api-1.7.30.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna-platform/5.5.0/af38e7c4d0fc73c23ecd785443705bfdee5b90bf/jna-platform-5.5.0.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/5.5.0/e0845217c4907822403912ad6828d8e0b256208/jna-5.5.0.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/19.0.0/efbff6752f67a7c9de3e4251c086a88e23591dfd/annotations-19.0.0.jar no.ntnu.tdt4501.benchmark.jmh.inmemory.InParallelBenchmark
+----------------------------
+Testing with 2 threads
+----------------------------
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.openjdk.jmh.util.Utils (file:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.openjdk.jmh/jmh-core/1.20/5f9f9839bda2332e9acd06ce31ad94afa7d6d447/jmh-core-1.20.jar) to field java.io.PrintStream.charOut
+WARNING: Please consider reporting this to the maintainers of org.openjdk.jmh.util.Utils
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -Xms8024m -Xmx8024m
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.InParallelBenchmark.insertTest
+# Parameters: (threads = 2)
+
+# Run progress: 0.00% complete, ETA 00:00:30
+# Fork: 1 of 10
+Iteration   1: USING: 2
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 9396224locked to CPU id 6
+Thread 8335360locked to CPU id 7
+5728819.547 ops/s
+Moved: 1429620
+
+Moved: 1381870
+
+Queue size: 7711853
+
+Queue size: 7640662
+
+
+# Run progress: 10.00% complete, ETA 00:00:35
+# Fork: 2 of 10
+Iteration   1: USING: 2
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 13791232locked to CPU id 7
+Thread 14852096locked to CPU id 6
+6985200.431 ops/s
+Moved: 1806073
+
+Moved: 1860699
+
+Queue size: 8680281
+
+Queue size: 8737008
+
+
+# Run progress: 20.00% complete, ETA 00:00:29
+# Fork: 3 of 10
+Iteration   1: USING: 2
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 2715648locked to CPU id 6
+Thread 1654784locked to CPU id 7
+6794889.773 ops/s
+Moved: 1152149
+
+Moved: 1115260
+
+Queue size: 9163900
+
+Queue size: 9142153
+
+
+# Run progress: 30.00% complete, ETA 00:00:25
+# Fork: 4 of 10
+Iteration   1: USING: 2
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 13418496locked to CPU id 6
+Thread 12357632locked to CPU id 7
+6997440.635 ops/s
+Moved: 1506585
+
+Queue size: 9029459
+
+Moved: 1528919
+
+Queue size: 9059878
+
+
+# Run progress: 40.00% complete, ETA 00:00:22
+# Fork: 5 of 10
+Iteration   1: USING: 2
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 15691776locked to CPU id 6
+Thread 14630912locked to CPU id 7
+6444917.241 ops/s
+Moved: 2187197
+
+Queue size: 7629638
+
+Moved: 2119843
+
+Queue size: 7768053
+
+
+# Run progress: 50.00% complete, ETA 00:00:18
+# Fork: 6 of 10
+Iteration   1: USING: 2
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 2953216locked to CPU id 7
+Thread 4014080locked to CPU id 6
+5633253.668 ops/s
+Moved: 1776283
+
+Queue size: 7070633
+
+Moved: 1667455
+
+Queue size: 7232457
+
+
+# Run progress: 60.00% complete, ETA 00:00:14
+# Fork: 7 of 10
+Iteration   1: USING: 2
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 16293888locked to CPU id 7
+Thread 577536locked to CPU id 6
+5804090.484 ops/s
+Moved: 1331611
+
+Moved: 1387869
+
+Queue size: 7698106
+
+Queue size: 7728775
+
+
+# Run progress: 70.00% complete, ETA 00:00:11
+# Fork: 8 of 10
+Iteration   1: USING: 2
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 6184960locked to CPU id 6
+Thread 5124096locked to CPU id 7
+5657078.322 ops/s
+Moved: 2701325
+
+Queue size: 6098201
+
+Moved: 2566408
+
+Queue size: 6204271
+
+
+# Run progress: 80.00% complete, ETA 00:00:07
+# Fork: 9 of 10
+Iteration   1: USING: 2
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 1916928locked to CPU id 7
+Thread 2977792locked to CPU id 6
+Exception in thread "Thread-3" java.lang.ArrayIndexOutOfBoundsException: arraycopy: last source index 1215613 out of bounds for object array[1215487]
+	at java.base/java.lang.System.arraycopy(Native Method)
+	at java.base/java.util.ArrayList.fastRemove(ArrayList.java:672)
+	at java.base/java.util.ArrayList.remove(ArrayList.java:539)
+	at no.ntnu.tdt4501.implementation.btree.inmemoryparallel.BTreeThread.run(BTreeThread.java:71)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Moved: 1477117
+
+Queue size: 8372744
+
+6535232.788 ops/s
+
+# Run progress: 90.00% complete, ETA 00:00:03
+# Fork: 10 of 10
+Iteration   1: USING: 2
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 13238272locked to CPU id 7
+Thread 12177408locked to CPU id 6
+5428757.955 ops/s
+Moved: 2363021
+
+Moved: 2259263
+
+2363021 + 2259263
+
+Queue size: 6137396
+
+Queue size: 6273115
+
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.InParallelBenchmark.insertTest":
+  6200968.084 ±(99.9%) 924891.569 ops/s [Average]
+  (min, avg, max) = (5428757.955, 6200968.084, 6997440.635), stdev = 611758.507
+  CI (99.9%): [5276076.515, 7125859.653] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:36
+
+Benchmark                 (threads)   Mode  Cnt        Score        Error  Units
+BulkBenchmark.insertTest          2  thrpt   10  6200968.084 ± 924891.569  ops/s
+----------------------------
+Testing with 4 threads
+----------------------------
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -Xms8024m -Xmx8024m
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.InParallelBenchmark.insertTest
+# Parameters: (threads = 4)
+
+# Run progress: 0.00% complete, ETA 00:00:30
+# Fork: 1 of 10
+Iteration   1: USING: 4
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 5959680locked to CPU id 5
+Thread 8081408locked to CPU id 6
+Thread 7020544locked to CPU id 4
+Thread 4898816locked to CPU id 7
+4443296.840 ops/s
+Moved: 617775
+
+Moved: 633271
+
+Queue size: 2699084
+
+Moved: 632476
+
+Queue size: 2717620
+
+Moved: 630205
+
+Queue size: 2680787
+
+Queue size: 2726868
+
+
+# Run progress: 10.00% complete, ETA 00:00:33
+# Fork: 2 of 10
+Iteration   1: USING: 4
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 15826944locked to CPU id 6
+Thread 13705216locked to CPU id 7
+Thread 14766080locked to CPU id 5
+Thread 110592locked to CPU id 4
+Moved: 1252872
+
+Queue size: 2309684
+
+Moved: 1256985
+
+Queue size: 2280878
+4742570.194 ops/s
+
+Moved: 1232117
+
+Queue size: 2314532
+
+Moved: 1233640
+
+Queue size: 2334314
+
+
+# Run progress: 20.00% complete, ETA 00:00:29
+# Fork: 3 of 10
+Iteration   1: USING: 4
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 12505088locked to CPU id 7
+Thread 14626816locked to CPU id 4
+Thread 13565952locked to CPU id 5
+Thread 15687680locked to CPU id 6
+Moved: 636645
+
+Queue size: 3892164
+
+Moved: 618269
+
+Queue size: 3932381
+
+Moved: 611309
+
+Queue size: 3954491
+
+Moved: 628236
+
+Queue size: 3922416
+
+5494869.068 ops/s
+
+# Run progress: 30.00% complete, ETA 00:00:26
+# Fork: 4 of 10
+Iteration   1: USING: 4
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 2437120locked to CPU id 6
+Thread 315392locked to CPU id 4
+Thread 1376256locked to CPU id 5
+Thread 16031744locked to CPU id 7
+5861724.580 ops/s
+Moved: 707008
+
+Moved: 692022
+
+Queue size: 3746386
+
+Moved: 692837
+
+Queue size: 3744541
+
+Moved: 698586
+
+Queue size: 3731265
+
+Queue size: 3731921
+
+
+# Run progress: 40.00% complete, ETA 00:00:22
+# Fork: 5 of 10
+Iteration   1: USING: 4
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 10522624locked to CPU id 7
+Thread 12644352locked to CPU id 6
+Thread 13705216locked to CPU id 4
+Thread 11583488locked to CPU id 5
+5538547.889 ops/s
+Moved: 654330
+
+Queue size: 3830794
+
+Moved: 642328
+
+Queue size: 3888368
+
+Moved: 637166
+
+Moved: 641249
+
+Queue size: 3861050
+
+Queue size: 3876315
+
+
+# Run progress: 50.00% complete, ETA 00:00:18
+# Fork: 6 of 10
+Iteration   1: USING: 4
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 1261568locked to CPU id 7
+Thread 4444160locked to CPU id 4
+Thread 3383296locked to CPU id 6
+Thread 2322432locked to CPU id 5
+5286466.465 ops/s
+Moved: 664516
+
+Queue size: 3792695
+
+Moved: 663889
+
+Queue size: 3803661
+
+Moved: 670981
+
+Queue size: 3790125
+
+Moved: 672719
+
+Queue size: 3777664
+
+
+# Run progress: 60.00% complete, ETA 00:00:15
+# Fork: 7 of 10
+Iteration   1: USING: 4
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 9486336locked to CPU id 7
+Thread 11608064locked to CPU id 4
+Thread 10547200locked to CPU id 5
+Thread 12668928locked to CPU id 6
+5340074.854 ops/s
+Moved: 795512
+
+Moved: 763643
+
+Queue size: 3717113
+
+Queue size: 3686925
+
+Moved: 776025
+
+Queue size: 3680043
+
+Moved: 777586
+
+Queue size: 3701961
+
+
+# Run progress: 70.00% complete, ETA 00:00:11
+# Fork: 8 of 10
+Iteration   1: USING: 4
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 14053376locked to CPU id 6
+Thread 11931648locked to CPU id 4
+Thread 12992512locked to CPU id 5
+Thread 10870784locked to CPU id 7
+Moved: 681372
+
+Queue size: 3798150
+
+Moved: 740414
+
+Queue size: 3756778
+
+5525598.457 ops/s
+Moved: 669648
+
+Queue size: 3815681
+
+Moved: 684282
+
+Queue size: 3824634
+
+
+# Run progress: 80.00% complete, ETA 00:00:07
+# Fork: 9 of 10
+Iteration   1: USING: 4
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 3186688locked to CPU id 7
+Thread 6369280locked to CPU id 4
+Thread 5308416locked to CPU id 5
+Thread 4247552locked to CPU id 6
+5419111.262 ops/s
+Moved: 651369
+
+Moved: 638166
+
+Moved: 670389
+
+Queue size: 3836292
+
+Moved: 651182
+
+Queue size: 3858991
+
+Queue size: 3811433
+
+Queue size: 3840671
+
+
+# Run progress: 90.00% complete, ETA 00:00:03
+# Fork: 10 of 10
+Iteration   1: USING: 4
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 7733248locked to CPU id 7
+Thread 10915840locked to CPU id 4
+Thread 9854976locked to CPU id 5
+Thread 8794112locked to CPU id 6
+5173209.369 ops/s
+Moved: 758393
+
+Queue size: 3114318
+
+Moved: 761888
+
+Queue size: 3144607
+
+Moved: 750587
+
+Queue size: 3129447
+
+Moved: 757241
+
+Queue size: 3118659
+
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.InParallelBenchmark.insertTest":
+  5282546.898 ±(99.9%) 624368.984 ops/s [Average]
+  (min, avg, max) = (4443296.840, 5282546.898, 5861724.580), stdev = 412981.424
+  CI (99.9%): [4658177.914, 5906915.882] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:38
+
+Benchmark                 (threads)   Mode  Cnt        Score        Error  Units
+BulkBenchmark.insertTest          4  thrpt   10  5282546.898 ± 624368.984  ops/s
+----------------------------
+Testing with 8 threads
+----------------------------
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -Xms8024m -Xmx8024m
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.InParallelBenchmark.insertTest
+# Parameters: (threads = 8)
+
+# Run progress: 0.00% complete, ETA 00:00:30
+# Fork: 1 of 10
+Iteration   1: USING: 8
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 8933376locked to CPU id 7
+Thread 16359424locked to CPU id 6
+Thread 12115968locked to CPU id 5
+Thread 15298560locked to CPU id 3
+Thread 13176832locked to CPU id 4
+Thread 14237696locked to CPU id 1
+Thread 9994240locked to CPU id 2
+Thread 11055104locked to CPU id -1
+Moved: 1039549
+
+Queue size: 771984
+
+4817508.028 ops/s
+Moved: 1047971
+
+Queue size: 749471
+
+Moved: 1027357
+
+Queue size: 769532
+
+Moved: 1049753
+
+Queue size: 752753
+
+Moved: 1049291
+
+Queue size: 756814
+
+Moved: 1023540
+
+Queue size: 767407
+
+Moved: 1020791
+
+Queue size: 790694
+
+Moved: 1033997
+
+Queue size: 756886
+
+
+# Run progress: 10.00% complete, ETA 00:00:32
+# Fork: 2 of 10
+Iteration   1: USING: 8
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 5767168locked to CPU id 7
+Thread 6828032locked to CPU id 4
+Thread 10010624locked to CPU id 5
+Thread 7888896locked to CPU id 6
+Thread 13193216locked to CPU id 3
+Thread 12132352locked to CPU id 2
+Thread 11071488locked to CPU id 1
+Thread 8949760locked to CPU id -1
+Moved: 546888
+
+Queue size: 1188857
+
+4671465.985 ops/s
+Moved: 546353
+
+Queue size: 1201171
+
+Moved: 550808
+
+Queue size: 1198963
+
+Moved: 548238
+
+Moved: 618191
+
+Queue size: 1120927
+
+Moved: 552777
+
+Queue size: 1205394
+
+Moved: 554769
+
+Queue size: 1167512
+
+Moved: 537029
+
+Queue size: 1196391
+
+Queue size: 1198786
+
+
+# Run progress: 20.00% complete, ETA 00:00:29
+# Fork: 3 of 10
+Iteration   1: USING: 8
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 4075520locked to CPU id 6
+Thread 7258112locked to CPU id 4
+Thread 1953792locked to CPU id 7
+Thread 6197248locked to CPU id 5
+Thread 5136384locked to CPU id -1
+Thread 3014656locked to CPU id 1
+Thread 8318976locked to CPU id 2
+Thread 9379840locked to CPU id 3
+Moved: 397595
+
+Queue size: 1215089
+
+Moved: 400994
+
+Queue size: 1215735
+
+Moved: 386848
+
+Queue size: 1230477
+
+Moved: 392503
+
+Queue size: 1221238
+
+Moved: 394701
+
+4311166.262 ops/s
+Queue size: 1223693
+
+Moved: 389769
+
+Moved: 403863
+
+Queue size: 1206130
+
+Queue size: 1222031
+
+Moved: 389955
+
+Queue size: 1223420
+
+
+# Run progress: 30.00% complete, ETA 00:00:25
+# Fork: 4 of 10
+Iteration   1: USING: 8
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 14733312locked to CPU id 7
+Thread 77824locked to CPU id 6
+Thread 2199552locked to CPU id 5
+Thread 4321280locked to CPU id 3
+Thread 3260416locked to CPU id 4
+Thread 5382144locked to CPU id 2
+Thread 15794176locked to CPU id 1
+Thread 1138688locked to CPU id -1
+Moved: 497814
+
+Queue size: 1106622
+
+4246498.434 ops/s
+Moved: 522926
+
+Queue size: 1045454
+
+Moved: 507168
+
+Queue size: 1075997
+
+Moved: 523568
+
+Queue size: 1070614
+
+Moved: 517189
+
+Queue size: 1073182
+
+Moved: 486297
+
+Queue size: 1111658
+
+Moved: 502337
+
+Queue size: 1083126
+
+Moved: 505022
+
+Queue size: 1078854
+
+
+# Run progress: 40.00% complete, ETA 00:00:22
+# Fork: 5 of 10
+Iteration   1: USING: 8
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 8073216locked to CPU id 7
+Thread 14438400locked to CPU id 3
+Thread 10194944locked to CPU id 6
+Thread 12316672locked to CPU id 5
+Thread 13377536locked to CPU id 4
+Thread 11255808locked to CPU id -1
+Thread 15499264locked to CPU id 1
+Thread 9134080locked to CPU id 2
+Moved: 769204
+
+Queue size: 794850
+
+4180394.374 ops/s
+Moved: 772460
+
+Queue size: 782257
+
+Moved: 763628
+
+Moved: 771892
+
+Queue size: 782744
+
+Moved: 777933
+
+Queue size: 787307
+
+Moved: 776330
+
+Queue size: 806099
+
+Moved: 810561
+
+Queue size: 756915
+
+Moved: 768718
+
+Queue size: 795403
+
+Queue size: 805547
+
+
+# Run progress: 50.00% complete, ETA 00:00:18
+# Fork: 6 of 10
+Iteration   1: USING: 8
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 11440128locked to CPU id 6
+Thread 12500992locked to CPU id 4
+Thread 9318400locked to CPU id 5
+Thread 6135808locked to CPU id 7
+Thread 8257536locked to CPU id -1
+Thread 10379264locked to CPU id 1
+Thread 7196672locked to CPU id 2
+Thread 13561856locked to CPU id 3
+Moved: 954032
+
+Queue size: 666545
+
+4305329.522 ops/s
+Moved: 904706
+
+Queue size: 667183
+
+Moved: 921670
+
+Queue size: 714308
+
+Moved: 926592
+
+Queue size: 660414
+
+Moved: 961016
+
+Queue size: 644748
+
+Moved: 935254
+
+Queue size: 680549
+
+Moved: 903689
+
+Queue size: 707506
+
+Moved: 928353
+
+Queue size: 675038
+
+
+# Run progress: 60.00% complete, ETA 00:00:14
+# Fork: 7 of 10
+Iteration   1: USING: 8
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 8065024locked to CPU id 6
+Thread 3821568locked to CPU id 5
+Thread 7004160locked to CPU id 3
+Thread 1699840locked to CPU id 7
+Thread 5943296locked to CPU id 2
+Thread 2760704locked to CPU id 1
+Thread 4882432locked to CPU id 4
+Thread 9125888locked to CPU id -1
+Moved: 1662615
+
+Queue size: 0
+
+4142551.285 ops/s
+Moved: 1615166
+
+Queue size: 0
+
+Moved: 1595296
+
+Queue size: 6000
+
+Moved: 1600617
+
+Queue size: 10303
+
+Moved: 1624758
+
+Queue size: 5589
+
+Moved: 1587317
+
+Queue size: 45106
+
+Moved: 1607054
+
+Queue size: 0
+
+Moved: 1586548
+
+Queue size: 27947
+
+
+# Run progress: 70.00% complete, ETA 00:00:11
+# Fork: 8 of 10
+Iteration   1: USING: 8
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 12718080locked to CPU id 5
+Thread 10596352locked to CPU id 3
+Thread 7413760locked to CPU id 7
+Thread 13778944locked to CPU id 4
+Thread 8474624locked to CPU id 1
+Thread 11657216locked to CPU id 6
+Thread 14839808locked to CPU id -1
+Thread 9535488locked to CPU id 2
+Moved: 564152
+
+Queue size: 1102439
+
+4563875.031 ops/s
+Moved: 562437
+
+Queue size: 1138844
+
+Moved: 545963
+
+Queue size: 1148906
+
+Moved: 558629
+
+Queue size: 1128290
+
+Moved: 561463
+
+Queue size: 1138688
+
+Moved: 565687
+
+Queue size: 1115724
+
+Moved: 567807
+
+Queue size: 1125351
+
+Moved: 557634
+
+Queue size: 1145750
+
+
+# Run progress: 80.00% complete, ETA 00:00:07
+# Fork: 9 of 10
+Iteration   1: USING: 8
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 8241152locked to CPU id 5
+Thread 6119424locked to CPU id 2
+Thread 10362880locked to CPU id 3
+Thread 9302016locked to CPU id 4
+Thread 7180288locked to CPU id 6
+Thread 3997696locked to CPU id 7
+Thread 5058560locked to CPU id -1
+Thread 11423744locked to CPU id 1
+Exception in thread "Thread-2" java.lang.ArrayIndexOutOfBoundsException: arraycopy: last source index 248999 out of bounds for object array[240097]
+	at java.base/java.lang.System.arraycopy(Native Method)
+	at java.base/java.util.ArrayList.fastRemove(ArrayList.java:672)
+	at java.base/java.util.ArrayList.remove(ArrayList.java:539)
+	at no.ntnu.tdt4501.implementation.btree.inmemoryparallel.BTreeThread.run(BTreeThread.java:71)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Moved: 1047079
+
+Queue size: 658299
+
+4642283.118 ops/s
+Moved: 1048917
+
+Queue size: 663435
+
+Moved: 1020316
+
+Queue size: 673935
+
+Moved: 1044331
+
+Queue size: 678975
+
+Moved: 1066916
+
+Queue size: 662967
+
+Moved: 1041053
+
+Queue size: 665571
+
+Moved: 1041954
+
+Queue size: 649258
+
+
+# Run progress: 90.00% complete, ETA 00:00:03
+# Fork: 10 of 10
+Iteration   1: USING: 8
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Thread 14557184locked to CPU id 4
+Thread 16678912locked to CPU id 2
+Thread 12435456locked to CPU id 3
+Thread 15618048locked to CPU id 6
+Thread 13496320locked to CPU id 5
+Thread 10313728locked to CPU id 7
+Thread 11374592locked to CPU id -1
+Thread 962560locked to CPU id 1
+Moved: 1296823
+
+Queue size: 171160
+
+3885086.046 ops/s
+Moved: 1264248
+
+Queue size: 192140
+
+Moved: 1262739
+
+Queue size: 200132
+
+Moved: 1280918
+
+Queue size: 204649
+
+Moved: 1259284
+
+Queue size: 194632
+
+Moved: 1264900
+
+Queue size: 190644
+
+Moved: 1265261
+
+Queue size: 197686
+
+Moved: 1301059
+
+Queue size: 136173
+
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.InParallelBenchmark.insertTest":
+  4376615.809 ±(99.9%) 435898.226 ops/s [Average]
+  (min, avg, max) = (3885086.046, 4376615.809, 4817508.028), stdev = 288319.688
+  CI (99.9%): [3940717.582, 4812514.035] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:37
+
+Benchmark                 (threads)   Mode  Cnt        Score        Error  Units
+BulkBenchmark.insertTest          8  thrpt   10  4376615.809 ± 435898.226  ops/s
+
+Process finished with exit code 0

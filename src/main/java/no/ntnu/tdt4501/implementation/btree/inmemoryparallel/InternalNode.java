@@ -1,9 +1,8 @@
-package no.ntnu.tdt4501.implementation.btree.inmemorybulk;
+package no.ntnu.tdt4501.implementation.btree.inmemoryparallel;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Internal node in a B+-tree.
@@ -32,9 +31,9 @@ public class InternalNode <K extends Comparable<? super K>, V> extends Node<K, V
 
     @SuppressWarnings("Duplicates")
     @Override
-    public void deleteValue(K key, int branchingFactor) {
+    public V deleteValue(K key, int branchingFactor) {
         Node<K, V> child = getChild(key);
-        child.deleteValue(key, branchingFactor);
+        V value = child.deleteValue(key, branchingFactor);
 
         if (child.isUnderflow(branchingFactor)) {
             Node<K, V> childLeftSibling = getChildLeftSibling(key);
@@ -53,6 +52,7 @@ public class InternalNode <K extends Comparable<? super K>, V> extends Node<K, V
                 this.tree.updateRootNode(left);
             }
         }
+        return value;
 
     }
 
@@ -117,13 +117,13 @@ public class InternalNode <K extends Comparable<? super K>, V> extends Node<K, V
         return sibling;
     }
 
-    private synchronized Node<K, V> getChild(K key) {
+    private Node<K, V> getChild(K key) {
         int loc = Collections.binarySearch(this.keys, key);
         int childIndex = loc >= 0 ? loc + 1 : -loc - 1;
         return children.get(childIndex);
     }
 
-    private synchronized void deleteChild(K key) {
+    private void deleteChild(K key) {
         int loc = Collections.binarySearch(this.keys, key);
         if (loc >= 0) {
             keys.remove(loc);
@@ -131,7 +131,7 @@ public class InternalNode <K extends Comparable<? super K>, V> extends Node<K, V
         }
     }
 
-    private synchronized void insertChild(K key, Node<K, V> child) {
+    private void insertChild(K key, Node<K, V> child) {
         int loc = Collections.binarySearch(keys, key);
         int childIndex = loc >= 0 ? loc + 1 : -loc - 1;
         if (loc >= 0) {
@@ -142,7 +142,7 @@ public class InternalNode <K extends Comparable<? super K>, V> extends Node<K, V
         }
     }
 
-    private synchronized Node<K, V> getChildLeftSibling(K key) {
+    private Node<K, V> getChildLeftSibling(K key) {
         int loc = Collections.binarySearch(keys, key);
         int childIndex = loc >= 0 ? loc + 1 : -loc - 1;
         if (childIndex > 0) {
@@ -151,7 +151,7 @@ public class InternalNode <K extends Comparable<? super K>, V> extends Node<K, V
         return null;
     }
 
-    private synchronized Node<K, V> getChildRightSibling(K key) {
+    private Node<K, V> getChildRightSibling(K key) {
         int loc = Collections.binarySearch(keys, key);
         int childIndex = loc >= 0 ? loc + 1 : -loc - 1;
         if (childIndex < keys.size()) {

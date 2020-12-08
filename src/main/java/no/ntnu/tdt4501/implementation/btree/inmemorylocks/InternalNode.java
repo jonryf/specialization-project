@@ -60,8 +60,10 @@ public class InternalNode <K extends Comparable<? super K>, V> extends Node<K, V
     @Override
     public void insertValue(K key, V value, int branchingFactor) {
         Node<K, V> child = getChild(key);
-        child.insertValue(key, value, branchingFactor);
-        updateChild(child, branchingFactor);
+        synchronized (this) {
+            child.insertValue(key, value, branchingFactor);
+            updateChild(child, branchingFactor);
+        }
     }
 
     private synchronized void updateChild(Node<K, V> child, int branchingFactor){
@@ -103,9 +105,11 @@ public class InternalNode <K extends Comparable<? super K>, V> extends Node<K, V
     public synchronized void merge(Node sibling) {
         @SuppressWarnings("unchecked")
         InternalNode<K, V> node = (InternalNode) sibling;
+        List<K> siblingKeys = node.getKeys(); // "lock check"
+        List<Node<K,V>> siblingChildren = node.getChildren();
         keys.add(node.getFirstLeafKey());
-        keys.addAll(node.keys);
-        children.addAll(node.children);
+        keys.addAll(siblingKeys);
+        children.addAll(siblingChildren);
     }
 
     @Override
@@ -119,7 +123,13 @@ public class InternalNode <K extends Comparable<? super K>, V> extends Node<K, V
         return sibling;
     }
 
+    private synchronized List<K> getKeys(){
+        return this.keys;
+    }
 
+    private synchronized List<Node<K, V>> getChildren() {
+        return this.children;
+    }
 
 
     private synchronized Node<K, V> getChild(K key) {

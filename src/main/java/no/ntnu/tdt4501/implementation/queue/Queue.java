@@ -10,4 +10,8 @@ public abstract class Queue<K, V> extends BTree<K, V> {
 
     public abstract int size();
 
+    public V deleteAndGetItem(K key) {
+        return null;
+    }
+
 }

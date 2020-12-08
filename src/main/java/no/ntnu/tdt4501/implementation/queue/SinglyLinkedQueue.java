@@ -1,7 +1,9 @@
 package no.ntnu.tdt4501.implementation.queue;
 
 import java.lang.reflect.Array;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.stream.Collectors;
@@ -80,6 +82,31 @@ public class SinglyLinkedQueue<K extends Comparable<? super K>, V> extends Queue
 
         K[] arr = (K[]) Array.newInstance(keys.get(0).getClass(), keys.size());
         return keys.toArray(arr);*/
+    }
+
+    public List<Map.Entry<K, V>> getElements(int minimum) {
+        if(this.size() < minimum){
+            return null;
+        }
+        ConcurrentLinkedQueue<Item<K, V>> queue;
+
+        ConcurrentHashMap<K,V> table = new ConcurrentHashMap<>();
+        synchronized (this){
+            queue = this.queue;
+            this.queue = new ConcurrentLinkedQueue<>();
+        }
+        for(Item<K, V> item : queue){
+            table.put(item.key, item.value);
+        }
+
+        List<Map.Entry<K, V>> data =
+                table.entrySet()
+                        .parallelStream()
+                        .sorted(Comparator.comparing(Map.Entry::getKey))
+                        .collect(Collectors.toList());
+        return data;
+
+
     }
 
     @Override

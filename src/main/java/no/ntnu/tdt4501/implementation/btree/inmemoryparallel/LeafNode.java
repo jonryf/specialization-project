@@ -1,4 +1,4 @@
-package no.ntnu.tdt4501.implementation.btree.inmemorybulk;
+package no.ntnu.tdt4501.implementation.btree.inmemoryparallel;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,13 +28,14 @@ public class LeafNode<K extends Comparable<? super K>, V> extends Node<K, V> {
     }
 
     @Override
-    public synchronized void deleteValue(K key, int branchingFactor) {
+    public synchronized V deleteValue(K key, int branchingFactor) {
 
         int loc = Collections.binarySearch(keys, key);
         if (loc >= 0) {
             keys.remove(loc);
-            values.remove(loc);
+            return values.remove(loc);
         }
+        return null;
     }
 
     @SuppressWarnings("Duplicates")

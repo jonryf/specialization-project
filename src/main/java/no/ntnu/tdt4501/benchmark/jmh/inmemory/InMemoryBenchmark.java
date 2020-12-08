@@ -32,9 +32,27 @@ public class InMemoryBenchmark extends JMHBenchmark {
     @Threads(1)
     @Benchmark
     @OperationsPerInvocation(1000)
-    public void insertTest() {
+    public void a_insertTest() {
         insert(1000);
     }
+
+    @Threads(1)
+    @Benchmark
+    @OperationsPerInvocation(1000)
+    public void b_searchTest() {
+        search(1000);
+    }
+
+    @Threads(1)
+    @Benchmark
+    @OperationsPerInvocation(1000)
+    public void c_deleteTest() {
+        delete(1000);
+    }
+
+
+
+
 
 
     public static void main(String[] args) {

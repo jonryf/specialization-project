@@ -76,5 +76,4 @@ abstract class Node<K, V> {
      * @return number of keys
      */
     abstract int keyNumber();
-
 }

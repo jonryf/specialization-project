@@ -1,7 +1,6 @@
-package no.ntnu.tdt4501.implementation.btree.inmemorybulk;
+package no.ntnu.tdt4501.implementation.btree.inmemoryparallel;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * A node in a B+-tree
@@ -22,11 +21,11 @@ abstract class Node<K, V> {
 
     /**
      * Delete a key value pair if exist
-     *
-     * @param key key for pair
+     *  @param key key for pair
      * @param branchingFactor branching factor in the given B-tree
+     * @return
      */
-    abstract void deleteValue(K key, int branchingFactor);
+    abstract V deleteValue(K key, int branchingFactor);
 
     /**
      * Insert a key value pair to the node

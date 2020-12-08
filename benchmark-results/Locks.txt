@@ -1,0 +1,1388 @@
+/Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java "-javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=52530:/Applications/IntelliJ IDEA.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath /Users/jonryfetten/Programmering/Java/specialization-project/out/production/classes:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/io.github.myui/btree4j/0.9.1/7af37adac56e68cf777495da0f2a386bb4a27fa0/btree4j-0.9.1.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/site.ycsb/core/0.17.0/d47f6ddaedd1c2e531e5ed73eecdde140d4f7aa9/core-0.17.0.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.openjdk.jmh/jmh-generator-annprocess/1.20/2b42c35d1778faa701e042f7a6b58dab337dab82/jmh-generator-annprocess-1.20.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.openjdk.jmh/jmh-core/1.20/5f9f9839bda2332e9acd06ce31ad94afa7d6d447/jmh-core-1.20.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.17/5af35056b4d257e4b64b9e8069c0746e8b08629f/log4j-1.2.17.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/commons-cli/commons-cli/1.2/2bf96b7aa8b611c177d329452af1dc933e14501c/commons-cli-1.2.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.0.4/f029a2aefe2b3e1517573c580f948caac31b1056/commons-logging-1.0.4.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.apache.htrace/htrace-core4/4.1.0-incubating/12b3e2adda95e8c41d9d45d33db075137871d2e2/htrace-core4-4.1.0-incubating.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-mapper-asl/1.9.4/5206191b35112f50b8e25fcbd3f3b84e12e11cee/jackson-mapper-asl-1.9.4.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-core-asl/1.9.4/8d8b2a3e5bc77ee1be67d060b44ac77d48a27d6e/jackson-core-asl-1.9.4.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.hdrhistogram/HdrHistogram/2.1.4/2b0da22320f0ac0bbedc7b9df7881d9853d8a754/HdrHistogram-2.1.4.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/4.6/306816fb57cf94f108a43c95731b08934dcae15c/jopt-simple-4.6.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-math3/3.2/ec2544ab27e110d2d431bdad7d538ed509b21e62/commons-math3-3.2.jar no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark
+----------------------------
+Testing with 1 threads
+----------------------------
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.openjdk.jmh.util.Utils (file:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.openjdk.jmh/jmh-core/1.20/5f9f9839bda2332e9acd06ce31ad94afa7d6d447/jmh-core-1.20.jar) to field java.io.PrintStream.charOut
+WARNING: Please consider reporting this to the maintainers of org.openjdk.jmh.util.Utils
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=52530:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.deleteTest
+# Parameters: (threads = 1)
+
+# Run progress: 0.00% complete, ETA 00:01:30
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+End
+5953074.264 ops/s
+
+# Run progress: 3.33% complete, ETA 00:02:25
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+End
+5861152.876 ops/s
+
+# Run progress: 6.67% complete, ETA 00:02:29
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+End
+6877283.813 ops/s
+
+# Run progress: 10.00% complete, ETA 00:02:21
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+End
+5570434.496 ops/s
+
+# Run progress: 13.33% complete, ETA 00:02:17
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+End
+6206814.408 ops/s
+
+# Run progress: 16.67% complete, ETA 00:02:12
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+End
+5823052.737 ops/s
+
+# Run progress: 20.00% complete, ETA 00:02:07
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+End
+6662295.002 ops/s
+
+# Run progress: 23.33% complete, ETA 00:02:00
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+End
+6581470.815 ops/s
+
+# Run progress: 26.67% complete, ETA 00:01:54
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+End
+6259490.254 ops/s
+
+# Run progress: 30.00% complete, ETA 00:01:48
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+End
+7490376.545 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.deleteTest":
+  6328544.521 ±(99.9%) 878035.258 ops/s [Average]
+  (min, avg, max) = (5570434.496, 6328544.521, 7490376.545), stdev = 580765.958
+  CI (99.9%): [5450509.263, 7206579.779] (assumes normal distribution)
+
+
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=52530:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.insertTest
+# Parameters: (threads = 1)
+
+# Run progress: 33.33% complete, ETA 00:01:43
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+End
+4416758.900 ops/s
+
+# Run progress: 36.67% complete, ETA 00:01:38
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+End
+5168288.658 ops/s
+
+# Run progress: 40.00% complete, ETA 00:01:32
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+End
+4815863.875 ops/s
+
+# Run progress: 43.33% complete, ETA 00:01:27
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+End
+4489651.498 ops/s
+
+# Run progress: 46.67% complete, ETA 00:01:22
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+End
+4737972.987 ops/s
+
+# Run progress: 50.00% complete, ETA 00:01:17
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+End
+4678974.440 ops/s
+
+# Run progress: 53.33% complete, ETA 00:01:11
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+End
+4738146.998 ops/s
+
+# Run progress: 56.67% complete, ETA 00:01:06
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+End
+4722070.712 ops/s
+
+# Run progress: 60.00% complete, ETA 00:01:01
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+End
+4358236.070 ops/s
+
+# Run progress: 63.33% complete, ETA 00:00:56
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+End
+4632822.201 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.insertTest":
+  4675878.634 ±(99.9%) 347878.365 ops/s [Average]
+  (min, avg, max) = (4358236.070, 4675878.634, 5168288.658), stdev = 230099.999
+  CI (99.9%): [4328000.269, 5023756.999] (assumes normal distribution)
+
+
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=52530:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.searchTest
+# Parameters: (threads = 1)
+
+# Run progress: 66.67% complete, ETA 00:00:51
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+End
+6767646.646 ops/s
+
+# Run progress: 70.00% complete, ETA 00:00:46
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+End
+6057558.402 ops/s
+
+# Run progress: 73.33% complete, ETA 00:00:40
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+End
+6577184.559 ops/s
+
+# Run progress: 76.67% complete, ETA 00:00:35
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+End
+6380669.189 ops/s
+
+# Run progress: 80.00% complete, ETA 00:00:30
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+End
+7187718.826 ops/s
+
+# Run progress: 83.33% complete, ETA 00:00:25
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+End
+6121412.992 ops/s
+
+# Run progress: 86.67% complete, ETA 00:00:20
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+End
+6397721.161 ops/s
+
+# Run progress: 90.00% complete, ETA 00:00:15
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+End
+6203828.452 ops/s
+
+# Run progress: 93.33% complete, ETA 00:00:10
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+End
+6321375.344 ops/s
+
+# Run progress: 96.67% complete, ETA 00:00:05
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+End
+6834612.785 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.searchTest":
+  6484972.836 ±(99.9%) 538938.142 ops/s [Average]
+  (min, avg, max) = (6057558.402, 6484972.836, 7187718.826), stdev = 356474.212
+  CI (99.9%): [5946034.694, 7023910.977] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:02:32
+
+Benchmark                  (threads)   Mode  Cnt        Score        Error  Units
+LocksBenchmark.deleteTest          1  thrpt   10  6328544.521 ± 878035.258  ops/s
+LocksBenchmark.insertTest          1  thrpt   10  4675878.634 ± 347878.365  ops/s
+LocksBenchmark.searchTest          1  thrpt   10  6484972.836 ± 538938.142  ops/s
+----------------------------
+Testing with 2 threads
+----------------------------
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=52530:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.deleteTest
+# Parameters: (threads = 2)
+
+# Run progress: 0.00% complete, ETA 00:01:30
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+End
+6703545.800 ops/s
+
+# Run progress: 3.33% complete, ETA 00:02:45
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+End
+7479776.045 ops/s
+
+# Run progress: 6.67% complete, ETA 00:02:39
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+End
+7525295.596 ops/s
+
+# Run progress: 10.00% complete, ETA 00:02:33
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+End
+6663783.950 ops/s
+
+# Run progress: 13.33% complete, ETA 00:02:27
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+End
+7638516.030 ops/s
+
+# Run progress: 16.67% complete, ETA 00:02:23
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+End
+6881444.262 ops/s
+
+# Run progress: 20.00% complete, ETA 00:02:17
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+End
+6734927.137 ops/s
+
+# Run progress: 23.33% complete, ETA 00:02:11
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+End
+6664478.136 ops/s
+
+# Run progress: 26.67% complete, ETA 00:02:07
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+End
+7027950.839 ops/s
+
+# Run progress: 30.00% complete, ETA 00:02:01
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+End
+7147485.849 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.deleteTest":
+  7046720.364 ±(99.9%) 577316.827 ops/s [Average]
+  (min, avg, max) = (6663783.950, 7046720.364, 7638516.030), stdev = 381859.336
+  CI (99.9%): [6469403.538, 7624037.191] (assumes normal distribution)
+
+
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=52530:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.insertTest
+# Parameters: (threads = 2)
+
+# Run progress: 33.33% complete, ETA 00:01:57
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+End
+2458759.565 ops/s
+
+# Run progress: 36.67% complete, ETA 00:01:51
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+End
+2538360.778 ops/s
+
+# Run progress: 40.00% complete, ETA 00:01:46
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+End
+2546177.477 ops/s
+
+# Run progress: 43.33% complete, ETA 00:01:41
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+End
+2584978.758 ops/s
+
+# Run progress: 46.67% complete, ETA 00:01:35
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+End
+2528017.709 ops/s
+
+# Run progress: 50.00% complete, ETA 00:01:30
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+End
+2516458.496 ops/s
+
+# Run progress: 53.33% complete, ETA 00:01:24
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+End
+2538858.344 ops/s
+
+# Run progress: 56.67% complete, ETA 00:01:18
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+End
+2502016.082 ops/s
+
+# Run progress: 60.00% complete, ETA 00:01:11
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+End
+2535101.525 ops/s
+
+# Run progress: 63.33% complete, ETA 00:01:06
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+End
+2621102.880 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.insertTest":
+  2536983.161 ±(99.9%) 66316.126 ops/s [Average]
+  (min, avg, max) = (2458759.565, 2536983.161, 2621102.880), stdev = 43864.011
+  CI (99.9%): [2470667.036, 2603299.287] (assumes normal distribution)
+
+
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=52530:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.searchTest
+# Parameters: (threads = 2)
+
+# Run progress: 66.67% complete, ETA 00:01:00
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+End
+6865947.556 ops/s
+
+# Run progress: 70.00% complete, ETA 00:00:54
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+End
+6815196.111 ops/s
+
+# Run progress: 73.33% complete, ETA 00:00:47
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+End
+6709992.948 ops/s
+
+# Run progress: 76.67% complete, ETA 00:00:41
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+End
+6713947.249 ops/s
+
+# Run progress: 80.00% complete, ETA 00:00:35
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+End
+7102912.315 ops/s
+
+# Run progress: 83.33% complete, ETA 00:00:29
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+End
+6938610.927 ops/s
+
+# Run progress: 86.67% complete, ETA 00:00:23
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+End
+6801435.978 ops/s
+
+# Run progress: 90.00% complete, ETA 00:00:17
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+End
+6942968.723 ops/s
+
+# Run progress: 93.33% complete, ETA 00:00:11
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+End
+6912766.220 ops/s
+
+# Run progress: 96.67% complete, ETA 00:00:05
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+End
+6811199.467 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.searchTest":
+  6861497.749 ±(99.9%) 179253.580 ops/s [Average]
+  (min, avg, max) = (6709992.948, 6861497.749, 7102912.315), stdev = 118565.144
+  CI (99.9%): [6682244.170, 7040751.329] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:02:58
+
+Benchmark                  (threads)   Mode  Cnt        Score        Error  Units
+LocksBenchmark.deleteTest          2  thrpt   10  7046720.364 ± 577316.827  ops/s
+LocksBenchmark.insertTest          2  thrpt   10  2536983.161 ±  66316.126  ops/s
+LocksBenchmark.searchTest          2  thrpt   10  6861497.749 ± 179253.580  ops/s
+----------------------------
+Testing with 4 threads
+----------------------------
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=52530:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.deleteTest
+# Parameters: (threads = 4)
+
+# Run progress: 0.00% complete, ETA 00:01:30
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+End
+4596363.057 ops/s
+
+# Run progress: 3.33% complete, ETA 00:03:00
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+End
+4592620.893 ops/s
+
+# Run progress: 6.67% complete, ETA 00:02:56
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+End
+3935992.590 ops/s
+
+# Run progress: 10.00% complete, ETA 00:02:51
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+End
+4722881.583 ops/s
+
+# Run progress: 13.33% complete, ETA 00:02:45
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+End
+4108862.326 ops/s
+
+# Run progress: 16.67% complete, ETA 00:02:38
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+End
+4704211.827 ops/s
+
+# Run progress: 20.00% complete, ETA 00:02:32
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+End
+4311079.118 ops/s
+
+# Run progress: 23.33% complete, ETA 00:02:25
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+End
+4153397.705 ops/s
+
+# Run progress: 26.67% complete, ETA 00:02:19
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+End
+4627041.349 ops/s
+
+# Run progress: 30.00% complete, ETA 00:02:13
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+End
+4735841.800 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.deleteTest":
+  4448829.225 ±(99.9%) 445573.987 ops/s [Average]
+  (min, avg, max) = (3935992.590, 4448829.225, 4735841.800), stdev = 294719.604
+  CI (99.9%): [4003255.238, 4894403.212] (assumes normal distribution)
+
+
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=52530:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.insertTest
+# Parameters: (threads = 4)
+
+# Run progress: 33.33% complete, ETA 00:02:06
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+End
+1935670.757 ops/s
+
+# Run progress: 36.67% complete, ETA 00:02:01
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+End
+2016402.976 ops/s
+
+# Run progress: 40.00% complete, ETA 00:01:55
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+End
+1983061.020 ops/s
+
+# Run progress: 43.33% complete, ETA 00:01:49
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+End
+2004021.465 ops/s
+
+# Run progress: 46.67% complete, ETA 00:01:42
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+End
+2012718.817 ops/s
+
+# Run progress: 50.00% complete, ETA 00:01:36
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+End
+1983867.872 ops/s
+
+# Run progress: 53.33% complete, ETA 00:01:30
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+End
+2016521.670 ops/s
+
+# Run progress: 56.67% complete, ETA 00:01:23
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+End
+1885113.161 ops/s
+
+# Run progress: 60.00% complete, ETA 00:01:17
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+End
+2013985.506 ops/s
+
+# Run progress: 63.33% complete, ETA 00:01:11
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+End
+2025916.129 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.insertTest":
+  1987727.937 ±(99.9%) 67547.639 ops/s [Average]
+  (min, avg, max) = (1885113.161, 1987727.937, 2025916.129), stdev = 44678.581
+  CI (99.9%): [1920180.298, 2055275.577] (assumes normal distribution)
+
+
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=52530:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.searchTest
+# Parameters: (threads = 4)
+
+# Run progress: 66.67% complete, ETA 00:01:05
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+End
+4577484.863 ops/s
+
+# Run progress: 70.00% complete, ETA 00:00:58
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+End
+4687336.653 ops/s
+
+# Run progress: 73.33% complete, ETA 00:00:52
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+End
+4353264.216 ops/s
+
+# Run progress: 76.67% complete, ETA 00:00:45
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+End
+4540875.621 ops/s
+
+# Run progress: 80.00% complete, ETA 00:00:39
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+End
+4466746.971 ops/s
+
+# Run progress: 83.33% complete, ETA 00:00:32
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+End
+4504454.336 ops/s
+
+# Run progress: 86.67% complete, ETA 00:00:25
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+End
+4664187.642 ops/s
+
+# Run progress: 90.00% complete, ETA 00:00:19
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+End
+4705155.503 ops/s
+
+# Run progress: 93.33% complete, ETA 00:00:12
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+End
+4561240.755 ops/s
+
+# Run progress: 96.67% complete, ETA 00:00:06
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+End
+4559103.584 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.searchTest":
+  4561985.014 ±(99.9%) 161968.261 ops/s [Average]
+  (min, avg, max) = (4353264.216, 4561985.014, 4705155.503), stdev = 107131.976
+  CI (99.9%): [4400016.753, 4723953.275] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:03:14
+
+Benchmark                  (threads)   Mode  Cnt        Score        Error  Units
+LocksBenchmark.deleteTest          4  thrpt   10  4448829.225 ± 445573.987  ops/s
+LocksBenchmark.insertTest          4  thrpt   10  1987727.937 ±  67547.639  ops/s
+LocksBenchmark.searchTest          4  thrpt   10  4561985.014 ± 161968.261  ops/s
+----------------------------
+Testing with 8 threads
+----------------------------
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=52530:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.deleteTest
+# Parameters: (threads = 8)
+
+# Run progress: 0.00% complete, ETA 00:01:30
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+End
+3622235.625 ops/s
+
+# Run progress: 3.33% complete, ETA 00:03:23
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+End
+3343122.607 ops/s
+
+# Run progress: 6.67% complete, ETA 00:03:17
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+End
+3488764.986 ops/s
+
+# Run progress: 10.00% complete, ETA 00:03:11
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+End
+3348131.860 ops/s
+
+# Run progress: 13.33% complete, ETA 00:03:06
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+End
+3226915.838 ops/s
+
+# Run progress: 16.67% complete, ETA 00:02:59
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+End
+3352451.454 ops/s
+
+# Run progress: 20.00% complete, ETA 00:02:52
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+End
+3046007.256 ops/s
+
+# Run progress: 23.33% complete, ETA 00:02:45
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+End
+3152653.468 ops/s
+
+# Run progress: 26.67% complete, ETA 00:02:38
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+End
+3135378.384 ops/s
+
+# Run progress: 30.00% complete, ETA 00:02:32
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+End
+3377158.800 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.deleteTest":
+  3309282.028 ±(99.9%) 261935.169 ops/s [Average]
+  (min, avg, max) = (3046007.256, 3309282.028, 3622235.625), stdev = 173253.896
+  CI (99.9%): [3047346.859, 3571217.197] (assumes normal distribution)
+
+
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=52530:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.insertTest
+# Parameters: (threads = 8)
+
+# Run progress: 33.33% complete, ETA 00:02:25
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+End
+1396190.718 ops/s
+
+# Run progress: 36.67% complete, ETA 00:02:19
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+End
+1574963.789 ops/s
+
+# Run progress: 40.00% complete, ETA 00:02:12
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+End
+1555106.241 ops/s
+
+# Run progress: 43.33% complete, ETA 00:02:05
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+End
+1525345.217 ops/s
+
+# Run progress: 46.67% complete, ETA 00:01:58
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+End
+1665541.892 ops/s
+
+# Run progress: 50.00% complete, ETA 00:01:51
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+End
+1563006.608 ops/s
+
+# Run progress: 53.33% complete, ETA 00:01:43
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+End
+1482102.385 ops/s
+
+# Run progress: 56.67% complete, ETA 00:01:36
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+End
+1605722.050 ops/s
+
+# Run progress: 60.00% complete, ETA 00:01:28
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+End
+1565559.214 ops/s
+
+# Run progress: 63.33% complete, ETA 00:01:21
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+End
+1560354.527 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.insertTest":
+  1549389.264 ±(99.9%) 108664.728 ops/s [Average]
+  (min, avg, max) = (1396190.718, 1549389.264, 1665541.892), stdev = 71874.989
+  CI (99.9%): [1440724.536, 1658053.992] (assumes normal distribution)
+
+
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=52530:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.searchTest
+# Parameters: (threads = 8)
+
+# Run progress: 66.67% complete, ETA 00:01:14
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+End
+3545928.200 ops/s
+
+# Run progress: 70.00% complete, ETA 00:01:06
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+End
+3534352.013 ops/s
+
+# Run progress: 73.33% complete, ETA 00:00:59
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+End
+3489684.685 ops/s
+
+# Run progress: 76.67% complete, ETA 00:00:51
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+End
+3448367.068 ops/s
+
+# Run progress: 80.00% complete, ETA 00:00:44
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+End
+3450638.487 ops/s
+
+# Run progress: 83.33% complete, ETA 00:00:36
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+End
+3495469.641 ops/s
+
+# Run progress: 86.67% complete, ETA 00:00:29
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+End
+3162933.009 ops/s
+
+# Run progress: 90.00% complete, ETA 00:00:22
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+End
+3077890.414 ops/s
+
+# Run progress: 93.33% complete, ETA 00:00:14
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+End
+3659217.511 ops/s
+
+# Run progress: 96.67% complete, ETA 00:00:07
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+End
+3538892.779 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.searchTest":
+  3440337.381 ±(99.9%) 272123.186 ops/s [Average]
+  (min, avg, max) = (3077890.414, 3440337.381, 3659217.511), stdev = 179992.639
+  CI (99.9%): [3168214.195, 3712460.567] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:03:41
+
+Benchmark                  (threads)   Mode  Cnt        Score        Error  Units
+LocksBenchmark.deleteTest          8  thrpt   10  3309282.028 ± 261935.169  ops/s
+LocksBenchmark.insertTest          8  thrpt   10  1549389.264 ± 108664.728  ops/s
+LocksBenchmark.searchTest          8  thrpt   10  3440337.381 ± 272123.186  ops/s
+----------------------------
+Testing with 16 threads
+----------------------------
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=52530:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.deleteTest
+# Parameters: (threads = 16)
+
+# Run progress: 0.00% complete, ETA 00:01:30
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+End
+2592879.922 ops/s
+
+# Run progress: 3.33% complete, ETA 00:03:35
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+End
+2673742.705 ops/s
+
+# Run progress: 6.67% complete, ETA 00:03:30
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+End
+2552525.093 ops/s
+
+# Run progress: 10.00% complete, ETA 00:03:23
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+End
+2677558.145 ops/s
+
+# Run progress: 13.33% complete, ETA 00:03:14
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+End
+2870021.189 ops/s
+
+# Run progress: 16.67% complete, ETA 00:03:07
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+End
+2639745.672 ops/s
+
+# Run progress: 20.00% complete, ETA 00:02:59
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+End
+2549989.866 ops/s
+
+# Run progress: 23.33% complete, ETA 00:02:51
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+End
+2848051.894 ops/s
+
+# Run progress: 26.67% complete, ETA 00:02:44
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+End
+2926501.902 ops/s
+
+# Run progress: 30.00% complete, ETA 00:02:36
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+End
+2594326.998 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.deleteTest":
+  2692534.339 ±(99.9%) 209785.519 ops/s [Average]
+  (min, avg, max) = (2549989.866, 2692534.339, 2926501.902), stdev = 138760.132
+  CI (99.9%): [2482748.819, 2902319.858] (assumes normal distribution)
+
+
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=52530:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.insertTest
+# Parameters: (threads = 16)
+
+# Run progress: 33.33% complete, ETA 00:02:29
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+End
+1327573.545 ops/s
+
+# Run progress: 36.67% complete, ETA 00:02:21
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+End
+1253571.861 ops/s
+
+# Run progress: 40.00% complete, ETA 00:02:14
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+End
+1255453.889 ops/s
+
+# Run progress: 43.33% complete, ETA 00:02:07
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+End
+1212657.474 ops/s
+
+# Run progress: 46.67% complete, ETA 00:01:59
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+End
+1397300.969 ops/s
+
+# Run progress: 50.00% complete, ETA 00:01:52
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+End
+1360951.306 ops/s
+
+# Run progress: 53.33% complete, ETA 00:01:45
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+End
+1353781.680 ops/s
+
+# Run progress: 56.67% complete, ETA 00:01:37
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+End
+1365512.211 ops/s
+
+# Run progress: 60.00% complete, ETA 00:01:30
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+End
+1284341.471 ops/s
+
+# Run progress: 63.33% complete, ETA 00:01:22
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+End
+1262158.924 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.insertTest":
+  1307330.333 ±(99.9%) 92972.878 ops/s [Average]
+  (min, avg, max) = (1212657.474, 1307330.333, 1397300.969), stdev = 61495.802
+  CI (99.9%): [1214357.455, 1400303.211] (assumes normal distribution)
+
+
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=52530:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.searchTest
+# Parameters: (threads = 16)
+
+# Run progress: 66.67% complete, ETA 00:01:15
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+End
+2781420.165 ops/s
+
+# Run progress: 70.00% complete, ETA 00:01:08
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+End
+2912144.837 ops/s
+
+# Run progress: 73.33% complete, ETA 00:01:00
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+End
+2850882.002 ops/s
+
+# Run progress: 76.67% complete, ETA 00:00:53
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+End
+2714872.120 ops/s
+
+# Run progress: 80.00% complete, ETA 00:00:45
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+End
+2609415.051 ops/s
+
+# Run progress: 83.33% complete, ETA 00:00:37
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+End
+2775457.065 ops/s
+
+# Run progress: 86.67% complete, ETA 00:00:30
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+End
+2752338.883 ops/s
+
+# Run progress: 90.00% complete, ETA 00:00:22
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+End
+2615833.236 ops/s
+
+# Run progress: 93.33% complete, ETA 00:00:15
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+End
+2804783.813 ops/s
+
+# Run progress: 96.67% complete, ETA 00:00:07
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+End
+2740087.828 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.LocksBenchmark.searchTest":
+  2755723.500 ±(99.9%) 142432.004 ops/s [Average]
+  (min, avg, max) = (2609415.051, 2755723.500, 2912144.837), stdev = 94209.952
+  CI (99.9%): [2613291.496, 2898155.503] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:03:46
+
+Benchmark                  (threads)   Mode  Cnt        Score        Error  Units
+LocksBenchmark.deleteTest         16  thrpt   10  2692534.339 ± 209785.519  ops/s
+LocksBenchmark.insertTest         16  thrpt   10  1307330.333 ±  92972.878  ops/s
+LocksBenchmark.searchTest         16  thrpt   10  2755723.500 ± 142432.004  ops/s
+
+Process finished with exit code 0

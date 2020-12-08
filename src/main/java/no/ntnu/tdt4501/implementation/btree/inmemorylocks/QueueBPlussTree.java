@@ -2,12 +2,9 @@ package no.ntnu.tdt4501.implementation.btree.inmemorylocks;
 
 import no.ntnu.tdt4501.implementation.btree.BTree;
 import no.ntnu.tdt4501.implementation.queue.HashTableQueue;
-import no.ntnu.tdt4501.implementation.queue.Queue;
-import no.ntnu.tdt4501.implementation.queue.SinglyLinkedQueue;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -15,7 +12,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.Future;
-import java.util.stream.Collectors;
 
 import static no.ntnu.tdt4501.Settings.THREADS;
 
@@ -23,23 +19,25 @@ import static no.ntnu.tdt4501.Settings.THREADS;
 public class QueueBPlussTree<K extends Comparable<? super K>, V> extends BTree<K, V> {
 
     //private ExecutorService executorService;
-    public  ForkJoinPool executorService;
+    public  ExecutorService executorService;
 
-    private Queue<K, V> queue;
+    private HashTableQueue<K, V> queue;
     private BTree<K, V> btree;
     private boolean shutdown = false;
+
+    private List<Map.Entry<K, V>> tempQueue;
 
 
     public QueueBPlussTree() {
         this(new HashTableQueue<>(), new BPlussTree<>());
     }
 
-    public QueueBPlussTree(Queue<K, V> queue, BTree<K, V> btree) {
+    public QueueBPlussTree(HashTableQueue<K, V> queue, BTree<K, V> btree) {
         //this.executorService = Executors.newFixedThreadPool(THREADS);
         this.queue = queue;
         this.btree = btree;
-        executorService = new ForkJoinPool(THREADS);
-        executorService.execute(this::moveData3);
+        executorService = Executors.newWorkStealingPool(THREADS);
+        executorService.execute(this::moveDataAndSort);
         //new Thread(QueueBPlussTree.this::moveData3).start();
     }
 
@@ -54,7 +52,7 @@ public class QueueBPlussTree<K extends Comparable<? super K>, V> extends BTree<K
 
     @Override
     public void insert(K key, V value) {
-        if(this.queue.size() > 10000000){
+        if(this.queue.size() > 1000000){
             //this.btree.insert(key, value);
             this.executorService.submit(() -> {
                 this.btree.insert(key, value);
@@ -67,8 +65,10 @@ public class QueueBPlussTree<K extends Comparable<? super K>, V> extends BTree<K
 
     @Override
     public void delete(K key) {
-        this.queue.delete(key);
-        //this.btree.delete(key); //TODO
+        V value = this.queue.deleteAndGetItem(key);
+        if (value == null){
+            this.btree.delete(key);
+        }
     }
 
     @Override
@@ -78,40 +78,55 @@ public class QueueBPlussTree<K extends Comparable<? super K>, V> extends BTree<K
 
     }
 
+    private List<Map.Entry<K, V>> collectData(){
+        return (this.queue).getElements(10000);
+    }
 
-    public void moveData3()  {
+
+    public void moveDataAndSort()  {
         int elements = 0;
-
+        Future<List<Map.Entry<K, V>>> nextDataBatch = this.executorService.submit(this::collectData);
         while(!this.shutdown) {
-            List<Map.Entry<K, V>> data = ((HashTableQueue<K, V>)this.queue).getElements(10000);
+            List<Map.Entry<K, V>> data = null;
+            try {
+                data = nextDataBatch.get();
+                if(data == null){
+                    nextDataBatch = this.executorService.submit(this::collectData);
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
             if(data != null){
                 int size = data.size();
+                int partitions = 20;
 
-                int partitions = 10;
+
+                List<Future> futures = new ArrayList<>();
+                nextDataBatch = this.executorService.submit(this::collectData);
                 for(int i = 0; i<partitions; i++) {
                     for (int thread = 0; thread < THREADS; thread++) {
 
                         // CREATE WORKER
-                        int finalThread = thread * partitions + i;
-
-                        List<Future> futures = new ArrayList<>();
-
+                        int task = thread * partitions + i;
+                        List<Map.Entry<K, V>> finalData = data;
                         futures.add(this.executorService.submit(() -> {
-                            int from = finalThread * size / (THREADS * partitions);
-                            int to = (1 + finalThread) * size / (THREADS * partitions);
+                            int from = task * size / (THREADS * partitions);
+                            int to = (1 + task) * size / (THREADS * partitions);
 
-                            for (Map.Entry<K, V> entry : data.subList(from, to)) {
+                            for (Map.Entry<K, V> entry : finalData.subList(from, to)) {
                                 this.btree.insert(entry.getKey(), entry.getValue());
-                                this.queue.delete(entry.getKey());
+                                //this.queue.delete(entry.getKey());
                             }
                         }));
-                        for (Future future : futures) {
-                            try {
-                                future.get();
-                            } catch (InterruptedException | ExecutionException e) {
-                                e.printStackTrace();
-                            }
-                        }
+                    }
+                }
+                for (Future future : futures) {
+                    try {
+                        future.get();
+                    } catch (InterruptedException | ExecutionException e) {
+                        e.printStackTrace();
                     }
                 }
 
@@ -119,7 +134,6 @@ public class QueueBPlussTree<K extends Comparable<? super K>, V> extends BTree<K
                 elements += size;
                 int inQueue = this.queue.size();
                 System.out.println("Moved elements: " + elements);
-                System.out.println("In queue: " + inQueue);
             }
         }
         int inQueue = this.queue.size();
@@ -187,7 +201,7 @@ public class QueueBPlussTree<K extends Comparable<? super K>, V> extends BTree<K
         System.out.println(pending + " task are still pending");
     }
 
-    public void moveData2() {
+    /*public void moveData2() {
         int elements = 0;
         while(!this.shutdown) {
             List<SinglyLinkedQueue<K, V>.Item<K, V>> nextElements = ((SinglyLinkedQueue<K, V>)this.queue).getNextItems(300);
@@ -213,6 +227,6 @@ public class QueueBPlussTree<K extends Comparable<? super K>, V> extends BTree<K
         System.out.println("Shutting down... \n");
         System.out.println("Moved elements: " + elements);
         System.out.println("In queue: " + inQueue);
-    }
+    }*/
 
 }

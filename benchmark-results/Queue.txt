@@ -1,0 +1,3295 @@
+/Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java "-javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=53019:/Applications/IntelliJ IDEA.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath /Users/jonryfetten/Programmering/Java/specialization-project/out/production/classes:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/io.github.myui/btree4j/0.9.1/7af37adac56e68cf777495da0f2a386bb4a27fa0/btree4j-0.9.1.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/site.ycsb/core/0.17.0/d47f6ddaedd1c2e531e5ed73eecdde140d4f7aa9/core-0.17.0.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.openjdk.jmh/jmh-generator-annprocess/1.20/2b42c35d1778faa701e042f7a6b58dab337dab82/jmh-generator-annprocess-1.20.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.openjdk.jmh/jmh-core/1.20/5f9f9839bda2332e9acd06ce31ad94afa7d6d447/jmh-core-1.20.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/net.openhft/affinity/3.20.0/51704f95ab198b434716721e80266cb52b96256f/affinity-3.20.0.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.17/5af35056b4d257e4b64b9e8069c0746e8b08629f/log4j-1.2.17.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/commons-cli/commons-cli/1.2/2bf96b7aa8b611c177d329452af1dc933e14501c/commons-cli-1.2.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.0.4/f029a2aefe2b3e1517573c580f948caac31b1056/commons-logging-1.0.4.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.apache.htrace/htrace-core4/4.1.0-incubating/12b3e2adda95e8c41d9d45d33db075137871d2e2/htrace-core4-4.1.0-incubating.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-mapper-asl/1.9.4/5206191b35112f50b8e25fcbd3f3b84e12e11cee/jackson-mapper-asl-1.9.4.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-core-asl/1.9.4/8d8b2a3e5bc77ee1be67d060b44ac77d48a27d6e/jackson-core-asl-1.9.4.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.hdrhistogram/HdrHistogram/2.1.4/2b0da22320f0ac0bbedc7b9df7881d9853d8a754/HdrHistogram-2.1.4.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/4.6/306816fb57cf94f108a43c95731b08934dcae15c/jopt-simple-4.6.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-math3/3.2/ec2544ab27e110d2d431bdad7d538ed509b21e62/commons-math3-3.2.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.30/b5a4b6d16ab13e34a88fae84c35cd5d68cac922c/slf4j-api-1.7.30.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna-platform/5.5.0/af38e7c4d0fc73c23ecd785443705bfdee5b90bf/jna-platform-5.5.0.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/5.5.0/e0845217c4907822403912ad6828d8e0b256208/jna-5.5.0.jar:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/19.0.0/efbff6752f67a7c9de3e4251c086a88e23591dfd/annotations-19.0.0.jar no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark
+----------------------------
+Testing with 1 threads
+----------------------------
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.openjdk.jmh.util.Utils (file:/Users/jonryfetten/.gradle/caches/modules-2/files-2.1/org.openjdk.jmh/jmh-core/1.20/5f9f9839bda2332e9acd06ce31ad94afa7d6d447/jmh-core-1.20.jar) to field java.io.PrintStream.charOut
+WARNING: Please consider reporting this to the maintainers of org.openjdk.jmh.util.Utils
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=53019:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.deleteTest
+# Parameters: (threads = 1)
+
+# Run progress: 0.00% complete, ETA 00:01:30
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+Extracted: 10033
+Moved elements: 10033
+Extracted: 239168
+Extracted: 1000001
+Moved elements: 249201
+End
+Extracted: 1000001
+Moved elements: 1249202
+162873.730 ops/s
+
+# Run progress: 3.33% complete, ETA 00:02:54
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+Extracted: 10046
+Moved elements: 10046
+Extracted: 427326
+Extracted: 1000001
+Moved elements: 437372
+End
+Extracted: 1000001
+Moved elements: 1437373
+Moved elements: 2437374
+Shutting down...
+
+Moved elements: 2437374
+In queue: 0
+284063.940 ops/s
+
+# Run progress: 6.67% complete, ETA 00:02:42
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+Extracted: 10018
+Moved elements: 10018
+Extracted: 362204
+Extracted: 1000001
+Moved elements: 372222
+End
+Extracted: 1000001
+Moved elements: 1372223
+Moved elements: 2372224
+Shutting down...
+
+Moved elements: 2372224
+In queue: 0
+342574.299 ops/s
+
+# Run progress: 10.00% complete, ETA 00:02:30
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+Extracted: 10020
+Moved elements: 10020
+Extracted: 256362
+Extracted: 1000001
+Moved elements: 266382
+End
+Extracted: 1000001
+Moved elements: 1266383
+Moved elements: 2266384
+Shutting down...
+
+Moved elements: 2266384
+In queue: 0
+357109.003 ops/s
+
+# Run progress: 13.33% complete, ETA 00:02:22
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+Extracted: 10025
+Moved elements: 10025
+Extracted: 229501
+Extracted: 1000001
+Moved elements: 239526
+End
+Extracted: 1000001
+Moved elements: 1239527
+Moved elements: 2239528
+Shutting down...
+
+Moved elements: 2239528
+In queue: 0
+395293.767 ops/s
+
+# Run progress: 16.67% complete, ETA 00:02:15
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+Extracted: 10039
+Moved elements: 10039
+Extracted: 429292
+Extracted: 1000001
+Moved elements: 439331
+End
+Extracted: 1000001
+Moved elements: 1439332
+Moved elements: 2439333
+Shutting down...
+
+Moved elements: 2439333
+In queue: 0
+359085.979 ops/s
+
+# Run progress: 20.00% complete, ETA 00:02:09
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+Extracted: 10054
+Moved elements: 10054
+Extracted: 254268
+Extracted: 1000001
+Moved elements: 264322
+End
+Extracted: 1000001
+Moved elements: 1264323
+Moved elements: 2264324
+Shutting down...
+
+Moved elements: 2264324
+In queue: 0
+311780.502 ops/s
+
+# Run progress: 23.33% complete, ETA 00:02:03
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+Extracted: 10024
+Moved elements: 10024
+Extracted: 350212
+Extracted: 1000001
+Moved elements: 360236
+End
+Extracted: 1000001
+Moved elements: 1360237
+Moved elements: 2360238
+Shutting down...
+
+Moved elements: 2360238
+In queue: 0
+368397.673 ops/s
+
+# Run progress: 26.67% complete, ETA 00:01:57
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+Extracted: 10025
+Moved elements: 10025
+Extracted: 635555
+Extracted: 1000001
+End
+Moved elements: 645580
+Extracted: 1000001
+Moved elements: 1645581
+Moved elements: 2645582
+<failure>
+
+java.lang.IndexOutOfBoundsException: Index 309 out of bounds for length 309
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
+	at java.base/java.util.Objects.checkIndex(Objects.java:372)
+	at java.base/java.util.ArrayList.get(ArrayList.java:458)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.getChild(InternalNode.java:128)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.deleteValue(InternalNode.java:36)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.deleteValue(InternalNode.java:15)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.deleteValue(InternalNode.java:37)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.deleteValue(InternalNode.java:15)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.deleteValue(InternalNode.java:37)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.deleteValue(InternalNode.java:15)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.BPlussTree.delete(BPlussTree.java:34)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.BPlussTree.delete(BPlussTree.java:5)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.QueueBPlussTree.delete(QueueBPlussTree.java:70)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.QueueBPlussTree.delete(QueueBPlussTree.java:18)
+	at no.ntnu.tdt4501.benchmark.jmh.JMHBenchmark.runDeleteSync(JMHBenchmark.java:180)
+	at no.ntnu.tdt4501.benchmark.jmh.JMHBenchmark.delete(JMHBenchmark.java:93)
+	at no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.deleteTest(QueueBenchmark.java:51)
+	at no.ntnu.tdt4501.benchmark.jmh.inmemory.generated.QueueBenchmark_deleteTest_jmhTest.deleteTest_thrpt_jmhStub(QueueBenchmark_deleteTest_jmhTest.java:120)
+	at no.ntnu.tdt4501.benchmark.jmh.inmemory.generated.QueueBenchmark_deleteTest_jmhTest.deleteTest_Throughput(QueueBenchmark_deleteTest_jmhTest.java:83)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+
+
+# Run progress: 30.00% complete, ETA 00:01:50
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+Extracted: 10088
+Moved elements: 10088
+Extracted: 492128
+Extracted: 1000001
+End
+Moved elements: 502216
+Extracted: 1000001
+<failure>
+
+java.lang.IndexOutOfBoundsException: Index 309 out of bounds for length 309
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
+	at java.base/java.util.Objects.checkIndex(Objects.java:372)
+	at java.base/java.util.ArrayList.get(ArrayList.java:458)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.getChild(InternalNode.java:128)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.deleteValue(InternalNode.java:36)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.deleteValue(InternalNode.java:15)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.deleteValue(InternalNode.java:37)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.deleteValue(InternalNode.java:15)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.deleteValue(InternalNode.java:37)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.deleteValue(InternalNode.java:15)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.BPlussTree.delete(BPlussTree.java:34)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.BPlussTree.delete(BPlussTree.java:5)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.QueueBPlussTree.delete(QueueBPlussTree.java:70)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.QueueBPlussTree.delete(QueueBPlussTree.java:18)
+	at no.ntnu.tdt4501.benchmark.jmh.JMHBenchmark.runDeleteSync(JMHBenchmark.java:180)
+	at no.ntnu.tdt4501.benchmark.jmh.JMHBenchmark.delete(JMHBenchmark.java:93)
+	at no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.deleteTest(QueueBenchmark.java:51)
+	at no.ntnu.tdt4501.benchmark.jmh.inmemory.generated.QueueBenchmark_deleteTest_jmhTest.deleteTest_thrpt_jmhStub(QueueBenchmark_deleteTest_jmhTest.java:120)
+	at no.ntnu.tdt4501.benchmark.jmh.inmemory.generated.QueueBenchmark_deleteTest_jmhTest.deleteTest_Throughput(QueueBenchmark_deleteTest_jmhTest.java:83)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.deleteTest":
+  322647.362 ±(99.9%) 139788.111 ops/s [Average]
+  (min, avg, max) = (162873.730, 322647.362, 395293.767), stdev = 73111.885
+  CI (99.9%): [182859.251, 462435.472] (assumes normal distribution)
+
+
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=53019:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.insertTest
+# Parameters: (threads = 1)
+
+# Run progress: 33.33% complete, ETA 00:01:40
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+Extracted: 10050
+Moved elements: 10050
+Extracted: 371684
+Extracted: 1000001
+Moved elements: 381734
+End
+Extracted: 1000001
+4750325.192 ops/s
+
+# Run progress: 36.67% complete, ETA 00:01:38
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+Extracted: 10103
+Moved elements: 10103
+Extracted: 267016
+Extracted: 1000001
+Moved elements: 277119
+Extracted: 1000001
+End
+Moved elements: 1277120
+Extracted: 1000001
+Moved elements: 2277121
+Extracted: 1000001
+5128670.128 ops/s
+
+# Run progress: 40.00% complete, ETA 00:01:38
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+Extracted: 10018
+Moved elements: 10018
+Extracted: 361685
+Extracted: 1000001
+Moved elements: 371703
+End
+Extracted: 1000001
+Moved elements: 1371704
+4847447.571 ops/s
+
+# Run progress: 43.33% complete, ETA 00:01:35
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+Extracted: 10026
+Moved elements: 10026
+Extracted: 234195
+Extracted: 1000001
+Moved elements: 244221
+End
+Extracted: 1000001
+Moved elements: 1244222
+Extracted: 1000001
+5133460.301 ops/s
+
+# Run progress: 46.67% complete, ETA 00:01:30
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+Extracted: 10040
+Moved elements: 10040
+Extracted: 234852
+Extracted: 1000001
+Moved elements: 244892
+End
+Extracted: 1000001
+Moved elements: 1244893
+Extracted: 1000001
+Moved elements: 2244894
+Extracted: 1000001
+4924170.531 ops/s
+
+# Run progress: 50.00% complete, ETA 00:01:26
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+Extracted: 10038
+Moved elements: 10038
+Extracted: 240406
+Extracted: 1000001
+Moved elements: 250444
+End
+Extracted: 1000001
+Moved elements: 1250445
+Extracted: 1000001
+Moved elements: 2250446
+Extracted: 1000001
+5062786.788 ops/s
+
+# Run progress: 53.33% complete, ETA 00:01:21
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+Extracted: 10067
+Moved elements: 10067
+Extracted: 231507
+Extracted: 1000001
+Moved elements: 241574
+End
+Extracted: 1000001
+Moved elements: 1241575
+Extracted: 1000001
+4972328.719 ops/s
+
+# Run progress: 56.67% complete, ETA 00:01:15
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+Extracted: 10041
+Moved elements: 10041
+Extracted: 412613
+Extracted: 1000001
+Moved elements: 422654
+End
+Extracted: 1000001
+Moved elements: 1422655
+Extracted: 1000001
+Moved elements: 2422656
+5025043.948 ops/s
+
+# Run progress: 60.00% complete, ETA 00:01:11
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+Extracted: 10073
+Moved elements: 10073
+Extracted: 355673
+Extracted: 1000001
+Moved elements: 365746
+End
+Extracted: 1000001
+Moved elements: 1365747
+Extracted: 1000001
+4765231.185 ops/s
+
+# Run progress: 63.33% complete, ETA 00:01:06
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+Extracted: 10080
+Moved elements: 10080
+Extracted: 401587
+Extracted: 1000001
+End
+Moved elements: 411667
+Extracted: 1000001
+Moved elements: 1411668
+Extracted: 1000001
+Moved elements: 2411669
+4320412.703 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.insertTest":
+  4892987.707 ±(99.9%) 368092.867 ops/s [Average]
+  (min, avg, max) = (4320412.703, 4892987.707, 5133460.301), stdev = 243470.641
+  CI (99.9%): [4524894.839, 5261080.574] (assumes normal distribution)
+
+
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=53019:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.searchTest
+# Parameters: (threads = 1)
+
+# Run progress: 66.67% complete, ETA 00:01:00
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+Extracted: 10024
+Moved elements: 10024
+Extracted: 233611
+Extracted: 1000001
+Moved elements: 243635
+End
+Extracted: 1000001
+Moved elements: 1243636
+Moved elements: 2243637
+Shutting down...
+
+Moved elements: 2243637
+In queue: 0
+870487.244 ops/s
+
+# Run progress: 70.00% complete, ETA 00:00:53
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+Extracted: 10025
+Moved elements: 10025
+Extracted: 406468
+Extracted: 1000001
+Moved elements: 416493
+End
+Extracted: 1000001
+Moved elements: 1416494
+Moved elements: 2416495
+Shutting down...
+
+Moved elements: 2416495
+In queue: 0
+570916.448 ops/s
+
+# Run progress: 73.33% complete, ETA 00:00:47
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+Extracted: 10049
+Moved elements: 10049
+Extracted: 238818
+Extracted: 1000001
+Moved elements: 248867
+End
+Extracted: 1000001
+Moved elements: 1248868
+Moved elements: 2248869
+Shutting down...
+
+Moved elements: 2248869
+In queue: 0
+518139.468 ops/s
+
+# Run progress: 76.67% complete, ETA 00:00:41
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+Extracted: 10050
+Moved elements: 10050
+Extracted: 219347
+Extracted: 1000001
+Moved elements: 229397
+End
+Extracted: 1000001
+Moved elements: 1229398
+Moved elements: 2229399
+Shutting down...
+
+Moved elements: 2229399
+In queue: 0
+600320.407 ops/s
+
+# Run progress: 80.00% complete, ETA 00:00:35
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+Extracted: 10021
+Moved elements: 10021
+Extracted: 337334
+Extracted: 1000001
+Moved elements: 347355
+End
+Extracted: 1000001
+Moved elements: 1347356
+Moved elements: 2347357
+Shutting down...
+
+Moved elements: 2347357
+In queue: 0
+513280.731 ops/s
+
+# Run progress: 83.33% complete, ETA 00:00:28
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+Extracted: 10024
+Moved elements: 10024
+Extracted: 250895
+Extracted: 1000001
+Moved elements: 260919
+End
+Extracted: 1000001
+Moved elements: 1260920
+Moved elements: 2260921
+Shutting down...
+
+Moved elements: 2260921
+In queue: 0
+489606.430 ops/s
+
+# Run progress: 86.67% complete, ETA 00:00:23
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+Extracted: 10024
+Moved elements: 10024
+Extracted: 373500
+Extracted: 1000001
+End
+Moved elements: 383524
+Extracted: 1000001
+Moved elements: 1383525
+Moved elements: 2383526
+Shutting down...
+
+Moved elements: 2383526
+In queue: 0
+623531.665 ops/s
+
+# Run progress: 90.00% complete, ETA 00:00:17
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+Extracted: 10026
+Moved elements: 10026
+Extracted: 359350
+Extracted: 1000001
+Moved elements: 369376
+End
+Extracted: 1000001
+Moved elements: 1369377
+Moved elements: 2369378
+Shutting down...
+
+Moved elements: 2369378
+In queue: 0
+621502.641 ops/s
+
+# Run progress: 93.33% complete, ETA 00:00:11
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+Extracted: 10031
+Moved elements: 10031
+Extracted: 241226
+Extracted: 1000001
+Moved elements: 251257
+Extracted: 1000001
+End
+Moved elements: 1251258
+Extracted: 638659
+Moved elements: 2251259
+Moved elements: 2889918
+Shutting down...
+
+Moved elements: 2889918
+In queue: 0
+658698.952 ops/s
+
+# Run progress: 96.67% complete, ETA 00:00:05
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+Extracted: 10033
+Moved elements: 10033
+Extracted: 363098
+Extracted: 1000001
+Moved elements: 373131
+End
+Extracted: 1000001
+Moved elements: 1373132
+Moved elements: 2373133
+Shutting down...
+
+Moved elements: 2373133
+In queue: 0
+608597.413 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.searchTest":
+  607508.140 ±(99.9%) 162823.661 ops/s [Average]
+  (min, avg, max) = (489606.430, 607508.140, 870487.244), stdev = 107697.770
+  CI (99.9%): [444684.479, 770331.801] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:02:49
+
+Benchmark                  (threads)   Mode  Cnt        Score        Error  Units
+QueueBenchmark.deleteTest          1  thrpt    8   322647.362 ± 139788.111  ops/s
+QueueBenchmark.insertTest          1  thrpt   10  4892987.707 ± 368092.867  ops/s
+QueueBenchmark.searchTest          1  thrpt   10   607508.140 ± 162823.661  ops/s
+----------------------------
+Testing with 2 threads
+----------------------------
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=53019:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.deleteTest
+# Parameters: (threads = 2)
+
+# Run progress: 0.00% complete, ETA 00:01:30
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+Extracted: 10102
+Extracted: 101136
+Moved elements: 10102
+Extracted: 1000001
+Moved elements: 111238
+Extracted: 1000001
+End
+Moved elements: 1111239
+Extracted: 641823
+Moved elements: 2111240
+Moved elements: 2753063
+Shutting down...
+
+Moved elements: 2753063
+In queue: 0
+284077.334 ops/s
+
+# Run progress: 3.33% complete, ETA 00:02:23
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+Extracted: 10105
+Extracted: 110062
+Moved elements: 10105
+Extracted: 699052
+Moved elements: 120168
+Extracted: 1000001
+End
+Moved elements: 819220
+Extracted: 1000001
+Moved elements: 1819221
+Moved elements: 2819222
+Shutting down...
+
+Moved elements: 2819222
+In queue: 0
+461951.480 ops/s
+
+# Run progress: 6.67% complete, ETA 00:02:20
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+Extracted: 10012
+Extracted: 103429
+Moved elements: 10012
+Extracted: 1000001
+Moved elements: 113441
+Extracted: 1000001
+End
+Moved elements: 1113442
+Extracted: 655876
+Moved elements: 2113443
+Moved elements: 2769319
+Shutting down...
+
+Moved elements: 2769319
+In queue: 0
+218446.234 ops/s
+
+# Run progress: 10.00% complete, ETA 00:02:17
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+Extracted: 10021
+Extracted: 94380
+Moved elements: 10021
+Extracted: 1000001
+Moved elements: 104402
+Extracted: 1000001
+End
+Moved elements: 1104403
+Extracted: 715672
+Moved elements: 2104404
+Moved elements: 2820076
+Shutting down...
+
+Moved elements: 2820076
+In queue: 0
+286183.228 ops/s
+
+# Run progress: 13.33% complete, ETA 00:02:13
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+Extracted: 10146
+Extracted: 100813
+Moved elements: 10146
+Extracted: 1000001
+Moved elements: 110959
+End
+Extracted: 1000001
+Moved elements: 1110960
+Moved elements: 2110961
+Shutting down...
+
+Moved elements: 2110961
+In queue: 0
+334220.654 ops/s
+
+# Run progress: 16.67% complete, ETA 00:02:06
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+Extracted: 10126
+Extracted: 98894
+Moved elements: 10126
+Extracted: 1000001
+Moved elements: 109020
+Extracted: 1000001
+End
+Moved elements: 1109021
+Extracted: 189830
+Moved elements: 2109022
+Moved elements: 2298852
+Shutting down...
+
+Moved elements: 2298852
+In queue: 0
+262118.852 ops/s
+
+# Run progress: 20.00% complete, ETA 00:02:01
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+Extracted: 10031
+Extracted: 110898
+Moved elements: 10031
+Extracted: 1000001
+Moved elements: 120929
+End
+Extracted: 1000001
+Moved elements: 1120930
+Moved elements: 2120931
+Shutting down...
+
+Moved elements: 2120931
+In queue: 0
+390708.308 ops/s
+
+# Run progress: 23.33% complete, ETA 00:01:56
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+Extracted: 10034
+Extracted: 119539
+Moved elements: 10034
+Extracted: 1000001
+Moved elements: 129573
+Extracted: 1000001
+End
+Moved elements: 1129574
+Extracted: 642838
+Moved elements: 2129575
+Moved elements: 2772413
+Shutting down...
+
+Moved elements: 2772413
+In queue: 0
+310578.863 ops/s
+
+# Run progress: 26.67% complete, ETA 00:01:52
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+Extracted: 10018
+Extracted: 112008
+Moved elements: 10018
+Extracted: 1000001
+Moved elements: 122026
+Extracted: 1000001
+End
+Moved elements: 1122027
+Extracted: 734283
+Moved elements: 2122028
+Moved elements: 2856311
+Shutting down...
+
+Moved elements: 2856311
+In queue: 0
+133202.283 ops/s
+
+# Run progress: 30.00% complete, ETA 00:01:47
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+Extracted: 10076
+Extracted: 121439
+Moved elements: 10076
+Extracted: 1000001
+Moved elements: 131515
+Extracted: 1000001
+End
+Moved elements: 1131516
+Extracted: 403019
+Moved elements: 2131517
+Moved elements: 2534536
+Shutting down...
+
+Moved elements: 2534536
+In queue: 0
+229376.469 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.deleteTest":
+  291086.370 ±(99.9%) 139189.720 ops/s [Average]
+  (min, avg, max) = (133202.283, 291086.370, 461951.480), stdev = 92065.382
+  CI (99.9%): [151896.650, 430276.091] (assumes normal distribution)
+
+
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=53019:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.insertTest
+# Parameters: (threads = 2)
+
+# Run progress: 33.33% complete, ETA 00:01:43
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+Extracted: 10025
+Extracted: 103007
+Moved elements: 10025
+Extracted: 1000001
+Moved elements: 113032
+End
+Extracted: 1000001
+Moved elements: 1113033
+Extracted: 1000001
+Moved elements: 2113034
+5030492.902 ops/s
+Extracted: 1000001
+
+# Run progress: 36.67% complete, ETA 00:01:41
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+Extracted: 10051
+Extracted: 103004
+Moved elements: 10051
+Extracted: 1000001
+Moved elements: 113055
+Extracted: 1000001
+End
+Moved elements: 1113056
+Extracted: 1000001
+Moved elements: 2113057
+4766542.480 ops/s
+Extracted: 1000001
+
+# Run progress: 40.00% complete, ETA 00:01:37
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+Extracted: 10062
+Extracted: 96001
+Moved elements: 10062
+Extracted: 1000001
+Moved elements: 106063
+Extracted: 1000001
+End
+Moved elements: 1106064
+Extracted: 1000001
+Moved elements: 2106065
+Extracted: 1000001
+4612937.704 ops/s
+
+# Run progress: 43.33% complete, ETA 00:01:33
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+Extracted: 10053
+Extracted: 103863
+Moved elements: 10053
+Extracted: 1000001
+Moved elements: 113916
+End
+Extracted: 1000001
+Moved elements: 1113917
+Extracted: 1000001
+4557728.637 ops/s
+
+# Run progress: 46.67% complete, ETA 00:01:30
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+Extracted: 10067
+Extracted: 109651
+Moved elements: 10067
+Extracted: 1000001
+Moved elements: 119718
+Extracted: 1000001
+End
+Moved elements: 1119719
+Extracted: 1000001
+4582792.876 ops/s
+
+# Run progress: 50.00% complete, ETA 00:01:26
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+Extracted: 10063
+Extracted: 98759
+Moved elements: 10063
+Extracted: 1000001
+Moved elements: 108822
+End
+Extracted: 1000001
+Moved elements: 1108823
+Extracted: 1000001
+5189506.314 ops/s
+
+# Run progress: 53.33% complete, ETA 00:01:21
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+Extracted: 10021
+Extracted: 110549
+Moved elements: 10021
+Extracted: 1000001
+Moved elements: 120570
+End
+Extracted: 1000001
+Moved elements: 1120571
+Extracted: 1000001
+Moved elements: 2120572
+5053449.757 ops/s
+
+# Run progress: 56.67% complete, ETA 00:01:16
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+Extracted: 10038
+Extracted: 102797
+Moved elements: 10038
+Extracted: 1000001
+Moved elements: 112835
+Extracted: 1000001
+End
+Moved elements: 1112836
+Extracted: 1000001
+4422494.818 ops/s
+
+# Run progress: 60.00% complete, ETA 00:01:10
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+Extracted: 10018
+Extracted: 118011
+Moved elements: 10018
+Extracted: 1000001
+Moved elements: 128030
+Extracted: 1000001
+End
+Moved elements: 1128031
+Extracted: 1000001
+Moved elements: 2128032
+4865357.214 ops/s
+Extracted: 1000001
+
+# Run progress: 63.33% complete, ETA 00:01:05
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+Extracted: 10018
+Extracted: 100716
+Moved elements: 10018
+Extracted: 1000001
+Moved elements: 110734
+Extracted: 1000001
+End
+Moved elements: 1110735
+Extracted: 1000001
+Moved elements: 2110736
+Extracted: 1000001
+4671845.342 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.insertTest":
+  4775314.804 ±(99.9%) 379866.743 ops/s [Average]
+  (min, avg, max) = (4422494.818, 4775314.804, 5189506.314), stdev = 251258.331
+  CI (99.9%): [4395448.061, 5155181.547] (assumes normal distribution)
+
+
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=53019:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.searchTest
+# Parameters: (threads = 2)
+
+# Run progress: 66.67% complete, ETA 00:00:59
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+Extracted: 10073
+Extracted: 100439
+Moved elements: 10073
+Extracted: 1000001
+Moved elements: 110512
+Extracted: 1000001
+End
+Moved elements: 1110513
+Extracted: 229643
+Moved elements: 2110514
+Moved elements: 2340157
+Shutting down...
+
+Moved elements: 2340157
+In queue: 0
+780333.063 ops/s
+
+# Run progress: 70.00% complete, ETA 00:00:53
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+Extracted: 10181
+Extracted: 107671
+Moved elements: 10181
+Extracted: 1000001
+Moved elements: 117852
+Extracted: 1000001
+End
+Moved elements: 1117853
+Extracted: 1000001
+Moved elements: 2117854
+Moved elements: 3117855
+Shutting down...
+
+Moved elements: 3117855
+In queue: 0
+712843.675 ops/s
+
+# Run progress: 73.33% complete, ETA 00:00:47
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+Extracted: 10028
+Extracted: 130929
+Moved elements: 10028
+Extracted: 1000001
+Moved elements: 140957
+Extracted: 1000001
+End
+Moved elements: 1140958
+<failure>
+
+Extracted: 318115
+java.lang.NullPointerException
+	at java.base/java.util.Collections.indexedBinarySearch(Collections.java:228)
+	at java.base/java.util.Collections.binarySearch(Collections.java:215)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.LeafNode.getValue(LeafNode.java:23)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.LeafNode.getValue(LeafNode.java:7)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.getValue(InternalNode.java:30)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.getValue(InternalNode.java:15)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.getValue(InternalNode.java:30)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.getValue(InternalNode.java:15)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.getValue(InternalNode.java:30)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.getValue(InternalNode.java:15)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.BPlussTree.search(BPlussTree.java:24)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.BPlussTree.search(BPlussTree.java:5)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.QueueBPlussTree.search(QueueBPlussTree.java:48)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.QueueBPlussTree.search(QueueBPlussTree.java:18)
+	at no.ntnu.tdt4501.benchmark.jmh.JMHBenchmark.runSearchSync(JMHBenchmark.java:138)
+	at no.ntnu.tdt4501.benchmark.jmh.JMHBenchmark.search(JMHBenchmark.java:85)
+	at no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.searchTest(QueueBenchmark.java:44)
+	at no.ntnu.tdt4501.benchmark.jmh.inmemory.generated.QueueBenchmark_searchTest_jmhTest.searchTest_thrpt_jmhStub(QueueBenchmark_searchTest_jmhTest.java:120)
+	at no.ntnu.tdt4501.benchmark.jmh.inmemory.generated.QueueBenchmark_searchTest_jmhTest.searchTest_Throughput(QueueBenchmark_searchTest_jmhTest.java:83)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+
+
+# Run progress: 76.67% complete, ETA 00:00:40
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+Extracted: 10031
+Extracted: 99538
+Moved elements: 10031
+Extracted: 960416
+Moved elements: 109569
+Extracted: 1000001
+End
+Moved elements: 1069985
+Extracted: 802506
+Moved elements: 2069986
+Moved elements: 2872492
+Shutting down...
+
+Moved elements: 2872492
+In queue: 0
+611077.212 ops/s
+
+# Run progress: 80.00% complete, ETA 00:00:34
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+Extracted: 10068
+Extracted: 106464
+Moved elements: 10068
+Extracted: 1000001
+Moved elements: 116532
+Extracted: 1000001
+End
+Moved elements: 1116533
+Extracted: 596718
+<failure>
+
+java.lang.NullPointerException
+	at java.base/java.util.Collections.indexedBinarySearch(Collections.java:228)
+	at java.base/java.util.Collections.binarySearch(Collections.java:215)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.LeafNode.getValue(LeafNode.java:23)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.LeafNode.getValue(LeafNode.java:7)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.getValue(InternalNode.java:30)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.getValue(InternalNode.java:15)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.getValue(InternalNode.java:30)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.getValue(InternalNode.java:15)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.getValue(InternalNode.java:30)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.getValue(InternalNode.java:15)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.BPlussTree.search(BPlussTree.java:24)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.BPlussTree.search(BPlussTree.java:5)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.QueueBPlussTree.search(QueueBPlussTree.java:48)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.QueueBPlussTree.search(QueueBPlussTree.java:18)
+	at no.ntnu.tdt4501.benchmark.jmh.JMHBenchmark.runSearchSync(JMHBenchmark.java:138)
+	at no.ntnu.tdt4501.benchmark.jmh.JMHBenchmark.search(JMHBenchmark.java:85)
+	at no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.searchTest(QueueBenchmark.java:44)
+	at no.ntnu.tdt4501.benchmark.jmh.inmemory.generated.QueueBenchmark_searchTest_jmhTest.searchTest_thrpt_jmhStub(QueueBenchmark_searchTest_jmhTest.java:120)
+	at no.ntnu.tdt4501.benchmark.jmh.inmemory.generated.QueueBenchmark_searchTest_jmhTest.searchTest_Throughput(QueueBenchmark_searchTest_jmhTest.java:83)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+
+
+# Run progress: 83.33% complete, ETA 00:00:28
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+Extracted: 10076
+Extracted: 97106
+Moved elements: 10076
+Extracted: 1000001
+Moved elements: 107183
+Extracted: 1000001
+End
+Moved elements: 1107184
+Extracted: 81689
+Moved elements: 2107185
+Moved elements: 2188874
+Shutting down...
+
+Moved elements: 2188874
+In queue: 0
+465326.599 ops/s
+
+# Run progress: 86.67% complete, ETA 00:00:23
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+Extracted: 10124
+Extracted: 86560
+Moved elements: 10124
+Extracted: 1000001
+Moved elements: 96684
+Extracted: 1000001
+End
+Moved elements: 1096685
+Extracted: 350923
+Moved elements: 2096686
+367756.266 ops/s
+Moved elements: 2447609
+Shutting down...
+
+Moved elements: 2447609
+In queue: 0
+
+# Run progress: 90.00% complete, ETA 00:00:17
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+Extracted: 10044
+Extracted: 108771
+Moved elements: 10044
+Extracted: 1000001
+Moved elements: 118815
+End
+Extracted: 1000001
+Moved elements: 1118816
+Moved elements: 2118817
+Shutting down...
+
+Moved elements: 2118817
+In queue: 0
+528997.957 ops/s
+
+# Run progress: 93.33% complete, ETA 00:00:11
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+Extracted: 10346
+Extracted: 66554
+Moved elements: 10346
+Extracted: 1000001
+Moved elements: 76900
+Extracted: 1000001
+End
+Moved elements: 1076901
+Extracted: 915143
+Moved elements: 2076902
+Moved elements: 2992045
+Shutting down...
+
+Moved elements: 2992045
+In queue: 0
+770401.928 ops/s
+
+# Run progress: 96.67% complete, ETA 00:00:05
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+Extracted: 10210
+Extracted: 109942
+Moved elements: 10210
+Extracted: 1000001
+Moved elements: 120152
+Extracted: 1000001
+End
+Moved elements: 1120153
+Extracted: 732241
+<failure>
+
+java.lang.NullPointerException
+	at java.base/java.util.Collections.indexedBinarySearch(Collections.java:228)
+	at java.base/java.util.Collections.binarySearch(Collections.java:215)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.LeafNode.getValue(LeafNode.java:23)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.LeafNode.getValue(LeafNode.java:7)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.getValue(InternalNode.java:30)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.getValue(InternalNode.java:15)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.getValue(InternalNode.java:30)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.getValue(InternalNode.java:15)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.getValue(InternalNode.java:30)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.getValue(InternalNode.java:15)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.BPlussTree.search(BPlussTree.java:24)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.BPlussTree.search(BPlussTree.java:5)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.QueueBPlussTree.search(QueueBPlussTree.java:48)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.QueueBPlussTree.search(QueueBPlussTree.java:18)
+	at no.ntnu.tdt4501.benchmark.jmh.JMHBenchmark.runSearchSync(JMHBenchmark.java:138)
+	at no.ntnu.tdt4501.benchmark.jmh.JMHBenchmark.search(JMHBenchmark.java:85)
+	at no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.searchTest(QueueBenchmark.java:44)
+	at no.ntnu.tdt4501.benchmark.jmh.inmemory.generated.QueueBenchmark_searchTest_jmhTest.searchTest_thrpt_jmhStub(QueueBenchmark_searchTest_jmhTest.java:120)
+	at no.ntnu.tdt4501.benchmark.jmh.inmemory.generated.QueueBenchmark_searchTest_jmhTest.searchTest_Throughput(QueueBenchmark_searchTest_jmhTest.java:83)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.searchTest":
+  605248.100 ±(99.9%) 357689.491 ops/s [Average]
+  (min, avg, max) = (367756.266, 605248.100, 780333.063), stdev = 158816.351
+  CI (99.9%): [247558.609, 962937.591] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:02:50
+
+Benchmark                  (threads)   Mode  Cnt        Score        Error  Units
+QueueBenchmark.deleteTest          2  thrpt   10   291086.370 ± 139189.720  ops/s
+QueueBenchmark.insertTest          2  thrpt   10  4775314.804 ± 379866.743  ops/s
+QueueBenchmark.searchTest          2  thrpt    7   605248.100 ± 357689.491  ops/s
+----------------------------
+Testing with 4 threads
+----------------------------
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=53019:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.deleteTest
+# Parameters: (threads = 4)
+
+# Run progress: 0.00% complete, ETA 00:01:30
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+Extracted: 10077
+Extracted: 95976
+Moved elements: 10077
+Extracted: 1000001
+Moved elements: 106053
+Extracted: 1000001
+End
+Moved elements: 1106054
+Extracted: 1000001
+Moved elements: 2106055
+Moved elements: 3106056
+Shutting down...
+
+Moved elements: 3106056
+In queue: 0
+215370.756 ops/s
+
+# Run progress: 3.33% complete, ETA 00:02:38
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+Extracted: 10157
+Extracted: 92322
+Moved elements: 10157
+Extracted: 1000001
+Moved elements: 102479
+Extracted: 1000001
+End
+Moved elements: 1102480
+Extracted: 754354
+Moved elements: 2102481
+Moved elements: 2856835
+Shutting down...
+
+Moved elements: 2856835
+In queue: 0
+211406.786 ops/s
+
+# Run progress: 6.67% complete, ETA 00:02:35
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+Extracted: 10080
+Extracted: 92919
+Moved elements: 10080
+Extracted: 1000001
+Moved elements: 102999
+End
+Extracted: 1000001
+Moved elements: 1103000
+Moved elements: 2103001
+Shutting down...
+
+Moved elements: 2103001
+In queue: 0
+276605.401 ops/s
+
+# Run progress: 10.00% complete, ETA 00:02:28
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+Extracted: 10084
+Extracted: 79594
+Moved elements: 10084
+Extracted: 1000001
+Moved elements: 89678
+Extracted: 1000001
+End
+Moved elements: 1089679
+Extracted: 1000001
+Moved elements: 2089680
+176361.771 ops/s
+
+# Run progress: 13.33% complete, ETA 00:02:22
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+Extracted: 10019
+Extracted: 87687
+Moved elements: 10019
+Extracted: 728995
+Moved elements: 97706
+Extracted: 1000001
+End
+Moved elements: 826701
+Extracted: 1000001
+Moved elements: 1826702
+Moved elements: 2826703
+Shutting down...
+
+Moved elements: 2826703
+In queue: 0
+296040.793 ops/s
+
+# Run progress: 16.67% complete, ETA 00:02:16
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+Extracted: 10412
+Extracted: 93376
+Moved elements: 10412
+Extracted: 1000001
+Moved elements: 103788
+Extracted: 1000001
+End
+Moved elements: 1103789
+Extracted: 320301
+Moved elements: 2103790
+Moved elements: 2424091
+Shutting down...
+
+Moved elements: 2424091
+In queue: 0
+211216.223 ops/s
+
+# Run progress: 20.00% complete, ETA 00:02:10
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+Extracted: 10083
+Extracted: 61730
+Moved elements: 10083
+Extracted: 621239
+Moved elements: 71814
+Extracted: 1000001
+End
+Moved elements: 693053
+Extracted: 1000001
+Moved elements: 1693054
+Moved elements: 2693055
+Shutting down...
+
+Moved elements: 2693055
+In queue: 0
+232124.701 ops/s
+
+# Run progress: 23.33% complete, ETA 00:02:05
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+Extracted: 10200
+Extracted: 102638
+Moved elements: 10200
+Extracted: 1000001
+Moved elements: 112838
+Extracted: 1000001
+End
+Moved elements: 1112839
+Extracted: 1000001
+Moved elements: 2112840
+Moved elements: 3112841
+Shutting down...
+
+Moved elements: 3112841
+In queue: 0
+162597.109 ops/s
+
+# Run progress: 26.67% complete, ETA 00:01:58
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+Extracted: 10029
+Extracted: 102965
+Moved elements: 10029
+Extracted: 1000001
+Moved elements: 112994
+Extracted: 1000001
+End
+Moved elements: 1112995
+Extracted: 696559
+Moved elements: 2112996
+129083.959 ops/s
+
+# Run progress: 30.00% complete, ETA 00:01:52
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+Extracted: 10200
+Extracted: 97488
+Moved elements: 10200
+Extracted: 947405
+Moved elements: 107688
+Extracted: 1000001
+End
+Moved elements: 1055093
+Extracted: 1000001
+Moved elements: 2055094
+Moved elements: 3055095
+Shutting down...
+
+Moved elements: 3055095
+In queue: 0
+169669.903 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.deleteTest":
+  208047.740 ±(99.9%) 77869.176 ops/s [Average]
+  (min, avg, max) = (129083.959, 208047.740, 296040.793), stdev = 51505.638
+  CI (99.9%): [130178.564, 285916.916] (assumes normal distribution)
+
+
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=53019:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.insertTest
+# Parameters: (threads = 4)
+
+# Run progress: 33.33% complete, ETA 00:01:48
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+Extracted: 10063
+Extracted: 54353
+Moved elements: 10063
+Extracted: 508995
+Moved elements: 64416
+Extracted: 1000001
+End
+Moved elements: 573412
+Extracted: 1000001
+4497951.423 ops/s
+
+# Run progress: 36.67% complete, ETA 00:01:45
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+Extracted: 10046
+Extracted: 99887
+Moved elements: 10046
+Extracted: 952159
+Moved elements: 109933
+Extracted: 1000001
+End
+Moved elements: 1062092
+Extracted: 1000001
+4994874.648 ops/s
+
+# Run progress: 40.00% complete, ETA 00:01:44
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+Extracted: 10027
+Extracted: 97385
+Moved elements: 10027
+Extracted: 913974
+Moved elements: 107412
+Extracted: 1000001
+End
+Moved elements: 1021387
+Extracted: 1000001
+4954878.588 ops/s
+
+# Run progress: 43.33% complete, ETA 00:01:40
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+Extracted: 10013
+Extracted: 105119
+Moved elements: 10013
+Extracted: 1000001
+Moved elements: 115132
+Extracted: 1000001
+End
+Moved elements: 1115133
+Extracted: 1000001
+3544076.790 ops/s
+
+# Run progress: 46.67% complete, ETA 00:01:37
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+Extracted: 10084
+Extracted: 113849
+Moved elements: 10084
+Extracted: 1000001
+Moved elements: 123933
+Extracted: 1000001
+End
+Moved elements: 1123934
+Extracted: 1000001
+4944033.802 ops/s
+
+# Run progress: 50.00% complete, ETA 00:01:33
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+Extracted: 10052
+Extracted: 93193
+Moved elements: 10052
+Extracted: 615754
+Moved elements: 103245
+Extracted: 1000001
+End
+Moved elements: 719000
+Extracted: 1000001
+Moved elements: 1719001
+Extracted: 1000001
+4653740.260 ops/s
+
+# Run progress: 53.33% complete, ETA 00:01:29
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+Extracted: 10008
+Extracted: 97744
+Moved elements: 10008
+Extracted: 1000001
+Moved elements: 107752
+Extracted: 1000001
+End
+Moved elements: 1107753
+Extracted: 1000001
+4293965.019 ops/s
+
+# Run progress: 56.67% complete, ETA 00:01:24
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+Extracted: 10018
+Extracted: 76573
+Moved elements: 10018
+Extracted: 789148
+Moved elements: 86591
+Extracted: 1000001
+End
+Moved elements: 875739
+Extracted: 1000001
+5001190.766 ops/s
+
+# Run progress: 60.00% complete, ETA 00:01:18
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+Extracted: 11201
+Extracted: 92611
+Moved elements: 11201
+Extracted: 946083
+Moved elements: 103812
+Extracted: 1000001
+End
+Moved elements: 1049895
+Extracted: 1000001
+Moved elements: 2049896
+Extracted: 1000001
+4177909.622 ops/s
+
+# Run progress: 63.33% complete, ETA 00:01:12
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+Extracted: 10072
+Extracted: 88145
+Moved elements: 10072
+Extracted: 853382
+Moved elements: 98217
+Extracted: 1000001
+End
+Moved elements: 951599
+Extracted: 1000001
+3804485.606 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.insertTest":
+  4486710.652 ±(99.9%) 791344.930 ops/s [Average]
+  (min, avg, max) = (3544076.790, 4486710.652, 5001190.766), stdev = 523425.674
+  CI (99.9%): [3695365.723, 5278055.582] (assumes normal distribution)
+
+
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=53019:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.searchTest
+# Parameters: (threads = 4)
+
+# Run progress: 66.67% complete, ETA 00:01:06
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+Extracted: 10100
+Extracted: 97357
+Moved elements: 10100
+Extracted: 1000001
+Moved elements: 107457
+Extracted: 1000001
+End
+Moved elements: 1107458
+Extracted: 894838
+Moved elements: 2107459
+Moved elements: 3002297
+Shutting down...
+
+Moved elements: 3002297
+In queue: 0
+587014.270 ops/s
+
+# Run progress: 70.00% complete, ETA 00:00:59
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+Extracted: 10229
+Extracted: 87771
+Moved elements: 10229
+Extracted: 734473
+Moved elements: 98000
+Extracted: 1000001
+End
+Moved elements: 832473
+Extracted: 1000001
+Moved elements: 1832474
+Moved elements: 2832475
+Shutting down...
+
+Moved elements: 2832475
+In queue: 0
+457073.966 ops/s
+
+# Run progress: 73.33% complete, ETA 00:00:52
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+Extracted: 10052
+Extracted: 87589
+Moved elements: 10052
+Extracted: 1000001
+Moved elements: 97641
+Extracted: 1000001
+End
+Moved elements: 1097642
+Extracted: 1000001
+Moved elements: 2097643
+Moved elements: 3097644
+Shutting down...
+
+Moved elements: 3097644
+In queue: 0
+907565.442 ops/s
+
+# Run progress: 76.67% complete, ETA 00:00:45
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+Extracted: 10066
+Extracted: 99815
+Moved elements: 10066
+Extracted: 1000001
+Moved elements: 109881
+Extracted: 1000001
+End
+Moved elements: 1109882
+Extracted: 608838
+Moved elements: 2109883
+Moved elements: 2718721
+Shutting down...
+
+Moved elements: 2718721
+In queue: 0
+336920.611 ops/s
+
+# Run progress: 80.00% complete, ETA 00:00:38
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+Extracted: 10113
+Extracted: 92378
+Moved elements: 10113
+Extracted: 1000001
+Moved elements: 102491
+Extracted: 1000001
+End
+Moved elements: 1102492
+Extracted: 479458
+Moved elements: 2102493
+Moved elements: 2581951
+Shutting down...
+
+Moved elements: 2581951
+In queue: 0
+361551.557 ops/s
+
+# Run progress: 83.33% complete, ETA 00:00:31
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+Extracted: 10032
+Extracted: 94133
+Moved elements: 10032
+Extracted: 1000001
+Moved elements: 104165
+Extracted: 1000001
+End
+Moved elements: 1104166
+Extracted: 1000001
+Moved elements: 2104167
+Moved elements: 3104168
+Shutting down...
+
+Moved elements: 3104168
+In queue: 0
+585827.950 ops/s
+
+# Run progress: 86.67% complete, ETA 00:00:25
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+Extracted: 10034
+Extracted: 88799
+Moved elements: 10034
+Extracted: 877812
+Moved elements: 98833
+Extracted: 1000001
+End
+Moved elements: 976645
+Extracted: 1000001
+Moved elements: 1976646
+Moved elements: 2976647
+Shutting down...
+
+Moved elements: 2976647
+In queue: 0
+515835.290 ops/s
+
+# Run progress: 90.00% complete, ETA 00:00:18
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+Extracted: 10005
+Extracted: 103789
+Moved elements: 10005
+Extracted: 990760
+Moved elements: 113795
+Extracted: 1000001
+End
+Moved elements: 1104555
+Extracted: 636729
+Moved elements: 2104556
+Moved elements: 2741285
+Shutting down...
+
+Moved elements: 2741285
+In queue: 0
+451409.750 ops/s
+
+# Run progress: 93.33% complete, ETA 00:00:12
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+Extracted: 10045
+Extracted: 100804
+Moved elements: 10045
+Extracted: 1000001
+Moved elements: 110849
+End
+Extracted: 1000001
+Moved elements: 1110850
+Moved elements: 2110851
+Shutting down...
+
+Moved elements: 2110851
+In queue: 0
+346700.727 ops/s
+
+# Run progress: 96.67% complete, ETA 00:00:06
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+Extracted: 10019
+Extracted: 104458
+Moved elements: 10019
+Extracted: 1000001
+Moved elements: 114477
+Extracted: 1000001
+End
+Moved elements: 1114478
+Extracted: 735185
+Moved elements: 2114479
+Moved elements: 2849664
+Shutting down...
+
+Moved elements: 2849664
+In queue: 0
+408770.952 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.searchTest":
+  495867.052 ±(99.9%) 258403.976 ops/s [Average]
+  (min, avg, max) = (336920.611, 495867.052, 907565.442), stdev = 170918.231
+  CI (99.9%): [237463.075, 754271.028] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:03:04
+
+Benchmark                  (threads)   Mode  Cnt        Score        Error  Units
+QueueBenchmark.deleteTest          4  thrpt   10   208047.740 ±  77869.176  ops/s
+QueueBenchmark.insertTest          4  thrpt   10  4486710.652 ± 791344.930  ops/s
+QueueBenchmark.searchTest          4  thrpt   10   495867.052 ± 258403.976  ops/s
+----------------------------
+Testing with 8 threads
+----------------------------
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=53019:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.deleteTest
+# Parameters: (threads = 8)
+
+# Run progress: 0.00% complete, ETA 00:01:30
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+Extracted: 10023
+Extracted: 76362
+Moved elements: 10023
+Extracted: 971230
+Moved elements: 86385
+Extracted: 1000001
+End
+Moved elements: 1057615
+Extracted: 1000001
+54572.693 ops/s
+
+# Run progress: 3.33% complete, ETA 00:02:46
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+Extracted: 10110
+Extracted: 78974
+Moved elements: 10110
+Extracted: 910866
+Moved elements: 89084
+Extracted: 1000001
+End
+Moved elements: 999950
+Extracted: 1000001
+Moved elements: 1999951
+Moved elements: 2999952
+Shutting down...
+
+Moved elements: 2999952
+In queue: 0
+32290.232 ops/s
+
+# Run progress: 6.67% complete, ETA 00:02:38
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+Extracted: 10129
+Extracted: 85945
+Moved elements: 10129
+Extracted: 1000001
+Moved elements: 96074
+Extracted: 1000001
+End
+Moved elements: 1096075
+Extracted: 778498
+Moved elements: 2096076
+50428.184 ops/s
+
+# Run progress: 10.00% complete, ETA 00:02:31
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+Extracted: 10394
+Extracted: 87840
+Moved elements: 10394
+Extracted: 70444
+Moved elements: 98234
+Extracted: 1000001
+Moved elements: 168678
+Extracted: 1000001
+End
+Moved elements: 1168679
+Extracted: 1000001
+Moved elements: 2168680
+Moved elements: 3168681
+Shutting down...
+
+Moved elements: 3168681
+In queue: 0
+44157.519 ops/s
+
+# Run progress: 13.33% complete, ETA 00:02:24
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+Extracted: 10007
+Extracted: 86490
+Moved elements: 10007
+Extracted: 1000001
+Moved elements: 96498
+Extracted: 1000001
+End
+Moved elements: 1096499
+Extracted: 1000001
+Moved elements: 2096500
+Moved elements: 3096501
+Shutting down...
+
+Moved elements: 3096501
+In queue: 0
+36832.296 ops/s
+
+# Run progress: 16.67% complete, ETA 00:02:17
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+Extracted: 10736
+Extracted: 111253
+Moved elements: 10736
+Extracted: 1000001
+Moved elements: 121989
+Extracted: 1000001
+End
+Moved elements: 1121990
+Extracted: 1000001
+Moved elements: 2121991
+Moved elements: 3121992
+Shutting down...
+
+Moved elements: 3121992
+In queue: 0
+77688.796 ops/s
+
+# Run progress: 20.00% complete, ETA 00:02:12
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+Extracted: 10059
+Extracted: 95661
+Moved elements: 10059
+Extracted: 385516
+Moved elements: 105720
+Extracted: 1000001
+Moved elements: 491236
+End
+Extracted: 1000001
+Moved elements: 1491237
+Moved elements: 2491238
+Shutting down...
+
+Moved elements: 2491238
+In queue: 0
+118269.167 ops/s
+
+# Run progress: 23.33% complete, ETA 00:02:06
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+Extracted: 10157
+Extracted: 102967
+Moved elements: 10157
+Extracted: 1000001
+Moved elements: 113124
+Extracted: 1000001
+End
+Moved elements: 1113125
+Extracted: 848022
+Moved elements: 2113126
+Moved elements: 2961148
+Shutting down...
+
+Moved elements: 2961148
+In queue: 0
+44488.127 ops/s
+
+# Run progress: 26.67% complete, ETA 00:02:00
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+Extracted: 10951
+Extracted: 94838
+Moved elements: 10951
+Extracted: 1000001
+Moved elements: 105790
+Extracted: 1000001
+End
+Moved elements: 1105791
+Extracted: 1000001
+Moved elements: 2105792
+Moved elements: 3105793
+Shutting down...
+
+Moved elements: 3105793
+In queue: 0
+40871.912 ops/s
+
+# Run progress: 30.00% complete, ETA 00:01:54
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+Extracted: 10037
+Extracted: 121211
+Moved elements: 10037
+Extracted: 1000001
+Moved elements: 131249
+Extracted: 1000001
+End
+Moved elements: 1131250
+Extracted: 881203
+Moved elements: 2131251
+Moved elements: 3012454
+Shutting down...
+
+Moved elements: 3012454
+In queue: 0
+41539.518 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.deleteTest":
+  54113.844 ±(99.9%) 38989.265 ops/s [Average]
+  (min, avg, max) = (32290.232, 54113.844, 118269.167), stdev = 25788.985
+  CI (99.9%): [15124.579, 93103.110] (assumes normal distribution)
+
+
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=53019:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.insertTest
+# Parameters: (threads = 8)
+
+# Run progress: 33.33% complete, ETA 00:01:48
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+Extracted: 10008
+Extracted: 91648
+Moved elements: 10008
+Extracted: 1000001
+Moved elements: 101656
+Extracted: 1000001
+End
+Moved elements: 1101657
+Extracted: 1000001
+4917634.851 ops/s
+
+# Run progress: 36.67% complete, ETA 00:01:47
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+Extracted: 10495
+Extracted: 92230
+Moved elements: 10495
+Extracted: 1000001
+Moved elements: 102725
+Extracted: 1000001
+End
+Moved elements: 1102726
+Extracted: 1000001
+5142761.430 ops/s
+
+# Run progress: 40.00% complete, ETA 00:01:46
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+Extracted: 10160
+Extracted: 107241
+Moved elements: 10160
+Extracted: 952609
+Moved elements: 117401
+Extracted: 1000001
+End
+Moved elements: 1070011
+Extracted: 1000001
+4498848.944 ops/s
+
+# Run progress: 43.33% complete, ETA 00:01:42
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+Extracted: 10089
+Extracted: 91796
+Moved elements: 10089
+Extracted: 1000001
+Moved elements: 101885
+Extracted: 1000001
+End
+Moved elements: 1101886
+Extracted: 1000001
+4611393.487 ops/s
+
+# Run progress: 46.67% complete, ETA 00:01:37
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+Extracted: 10357
+Extracted: 101828
+Moved elements: 10357
+Extracted: 1000001
+Moved elements: 112185
+Extracted: 1000001
+End
+Moved elements: 1112186
+Extracted: 1000001
+Moved elements: 2112187
+Extracted: 1000001
+5279510.554 ops/s
+
+# Run progress: 50.00% complete, ETA 00:01:33
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+Extracted: 10042
+Extracted: 99139
+Moved elements: 10042
+Extracted: 656776
+Moved elements: 109181
+Extracted: 1000001
+End
+Moved elements: 765957
+Extracted: 1000001
+Moved elements: 1765958
+Extracted: 1000001
+5398689.265 ops/s
+
+# Run progress: 53.33% complete, ETA 00:01:29
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+Extracted: 10096
+Extracted: 91501
+Moved elements: 10096
+Extracted: 1000001
+Moved elements: 101597
+End
+Extracted: 1000001
+Moved elements: 1101598
+Extracted: 1000001
+5288168.605 ops/s
+
+# Run progress: 56.67% complete, ETA 00:01:23
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+Extracted: 10011
+Extracted: 78205
+Moved elements: 10011
+Extracted: 151610
+Moved elements: 88216
+Extracted: 1000001
+Moved elements: 239826
+Extracted: 1000001
+End
+Moved elements: 1239827
+Extracted: 1000001
+Moved elements: 2239828
+4727599.592 ops/s
+
+# Run progress: 60.00% complete, ETA 00:01:16
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+Extracted: 10416
+Extracted: 108901
+Moved elements: 10416
+Extracted: 993021
+Moved elements: 119317
+Extracted: 1000001
+End
+Moved elements: 1112338
+Extracted: 1000001
+Moved elements: 2112339
+Extracted: 1000001
+4389131.822 ops/s
+
+# Run progress: 63.33% complete, ETA 00:01:10
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+Extracted: 10019
+Extracted: 86978
+Moved elements: 10019
+Extracted: 878534
+Moved elements: 96997
+Extracted: 1000001
+End
+Moved elements: 975532
+Extracted: 1000001
+4711239.869 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.insertTest":
+  4896497.842 ±(99.9%) 545822.606 ops/s [Average]
+  (min, avg, max) = (4389131.822, 4896497.842, 5398689.265), stdev = 361027.858
+  CI (99.9%): [4350675.236, 5442320.448] (assumes normal distribution)
+
+
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=53019:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.searchTest
+# Parameters: (threads = 8)
+
+# Run progress: 66.67% complete, ETA 00:01:04
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+Extracted: 10062
+Extracted: 119152
+Moved elements: 10062
+Extracted: 936180
+Moved elements: 129214
+Extracted: 1000001
+End
+Moved elements: 1065394
+Extracted: 1000001
+Moved elements: 2065395
+Moved elements: 3065396
+Shutting down...
+
+Moved elements: 3065396
+In queue: 0
+102454.043 ops/s
+
+# Run progress: 70.00% complete, ETA 00:00:57
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+Extracted: 10166
+Extracted: 120702
+Moved elements: 10166
+Extracted: 814755
+Moved elements: 130868
+Extracted: 1000001
+End
+Moved elements: 945623
+Extracted: 1000001
+Moved elements: 1945624
+Moved elements: 2945625
+Shutting down...
+
+Moved elements: 2945625
+In queue: 0
+94163.922 ops/s
+
+# Run progress: 73.33% complete, ETA 00:00:50
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+Extracted: 10076
+Extracted: 76837
+Moved elements: 10076
+Extracted: 1000001
+Moved elements: 86913
+Extracted: 1000001
+End
+Moved elements: 1086914
+Extracted: 883661
+Moved elements: 2086915
+Moved elements: 2970576
+Shutting down...
+
+Moved elements: 2970576
+In queue: 0
+473701.260 ops/s
+
+# Run progress: 76.67% complete, ETA 00:00:44
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+Extracted: 10035
+Extracted: 89157
+Moved elements: 10035
+Extracted: 1000001
+Moved elements: 99192
+Extracted: 1000001
+End
+Moved elements: 1099193
+Extracted: 1000001
+Moved elements: 2099194
+Moved elements: 3099195
+Shutting down...
+
+Moved elements: 3099195
+In queue: 0
+144123.126 ops/s
+
+# Run progress: 80.00% complete, ETA 00:00:37
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+Extracted: 10081
+Extracted: 85012
+Moved elements: 10081
+Extracted: 1000001
+Moved elements: 95093
+Extracted: 1000001
+End
+Moved elements: 1095094
+Extracted: 1000001
+Moved elements: 2095095
+Moved elements: 3095096
+Shutting down...
+
+Moved elements: 3095096
+In queue: 0
+71859.854 ops/s
+
+# Run progress: 83.33% complete, ETA 00:00:31
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+Extracted: 10026
+Extracted: 78233
+Moved elements: 10026
+Extracted: 1000001
+Moved elements: 88259
+Extracted: 1000001
+End
+Moved elements: 1088260
+Extracted: 1000001
+Moved elements: 2088261
+Moved elements: 3088262
+Shutting down...
+
+Moved elements: 3088262
+In queue: 0
+115741.589 ops/s
+
+# Run progress: 86.67% complete, ETA 00:00:24
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+Extracted: 10023
+Extracted: 96410
+Moved elements: 10023
+Extracted: 1000001
+Moved elements: 106433
+Extracted: 1000001
+End
+Moved elements: 1106434
+Extracted: 1000001
+Moved elements: 2106435
+Moved elements: 3106436
+Shutting down...
+
+Moved elements: 3106436
+In queue: 0
+109348.113 ops/s
+
+# Run progress: 90.00% complete, ETA 00:00:18
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+Extracted: 11095
+Extracted: 90655
+Moved elements: 11095
+Extracted: 954187
+Moved elements: 101750
+Extracted: 1000001
+End
+Moved elements: 1055938
+Extracted: 1000001
+Moved elements: 2055939
+Moved elements: 3055940
+Shutting down...
+
+Moved elements: 3055940
+In queue: 0
+99889.269 ops/s
+
+# Run progress: 93.33% complete, ETA 00:00:12
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+Extracted: 10151
+Extracted: 111949
+Moved elements: 10151
+Extracted: 672970
+Moved elements: 122100
+Extracted: 1000001
+End
+Moved elements: 795070
+Extracted: 1000001
+Moved elements: 1795071
+Moved elements: 2795072
+Shutting down...
+
+Moved elements: 2795072
+In queue: 0
+88527.628 ops/s
+
+# Run progress: 96.67% complete, ETA 00:00:06
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+Extracted: 10514
+Extracted: 116235
+Moved elements: 10514
+Extracted: 1000001
+Moved elements: 126749
+Extracted: 1000001
+End
+Moved elements: 1126750
+Extracted: 1000001
+Moved elements: 2126751
+Moved elements: 3126752
+Shutting down...
+
+Moved elements: 3126752
+In queue: 0
+103917.539 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.searchTest":
+  140372.634 ±(99.9%) 179320.762 ops/s [Average]
+  (min, avg, max) = (71859.854, 140372.634, 473701.260), stdev = 118609.582
+  CI (99.9%): [≈ 0, 319693.397] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:03:02
+
+Benchmark                  (threads)   Mode  Cnt        Score        Error  Units
+QueueBenchmark.deleteTest          8  thrpt   10    54113.844 ±  38989.265  ops/s
+QueueBenchmark.insertTest          8  thrpt   10  4896497.842 ± 545822.606  ops/s
+QueueBenchmark.searchTest          8  thrpt   10   140372.634 ± 179320.762  ops/s
+----------------------------
+Testing with 16 threads
+----------------------------
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=53019:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.deleteTest
+# Parameters: (threads = 16)
+
+# Run progress: 0.00% complete, ETA 00:01:30
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+Extracted: 10530
+Extracted: 85082
+Moved elements: 10530
+Extracted: 958636
+Moved elements: 95612
+Extracted: 1000001
+End
+Moved elements: 1054249
+Extracted: 1000001
+Moved elements: 2054250
+11649.045 ops/s
+
+# Run progress: 3.33% complete, ETA 00:02:38
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+Extracted: 10086
+Extracted: 97381
+Moved elements: 10086
+Extracted: 847341
+Moved elements: 107467
+Extracted: 1000001
+End
+Moved elements: 954808
+Extracted: 1000001
+Moved elements: 1954809
+Moved elements: 2954810
+Shutting down...
+
+Moved elements: 2954810
+In queue: 0
+9595.635 ops/s
+
+# Run progress: 6.67% complete, ETA 00:02:33
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+Extracted: 10023
+Extracted: 117069
+Moved elements: 10023
+Extracted: 453955
+Moved elements: 127092
+Extracted: 1000001
+Moved elements: 581048
+End
+Extracted: 1000001
+Moved elements: 1581049
+Moved elements: 2581050
+Shutting down...
+
+Moved elements: 2581050
+In queue: 0
+8879.912 ops/s
+
+# Run progress: 10.00% complete, ETA 00:02:29
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+Extracted: 10070
+Extracted: 95173
+Moved elements: 10070
+Extracted: 867070
+Moved elements: 105243
+Extracted: 1000001
+End
+Moved elements: 972313
+Extracted: 1000001
+Moved elements: 1972314
+Moved elements: 2972315
+Shutting down...
+
+Moved elements: 2972315
+In queue: 0
+15556.004 ops/s
+
+# Run progress: 13.33% complete, ETA 00:02:25
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+Extracted: 10065
+Extracted: 87738
+Moved elements: 10065
+Extracted: 814684
+Moved elements: 97804
+Extracted: 1000001
+End
+Moved elements: 912488
+Extracted: 1000001
+Moved elements: 1912489
+10036.384 ops/s
+
+# Run progress: 16.67% complete, ETA 00:02:17
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+Extracted: 10643
+Extracted: 104164
+Moved elements: 10643
+Extracted: 354406
+Moved elements: 114807
+Extracted: 1000001
+End
+Moved elements: 469213
+Extracted: 1000001
+Moved elements: 1469214
+Moved elements: 2469215
+Shutting down...
+
+Moved elements: 2469215
+In queue: 0
+11502.382 ops/s
+
+# Run progress: 20.00% complete, ETA 00:02:11
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+Extracted: 10053
+Extracted: 100473
+Moved elements: 10053
+Extracted: 1000001
+Moved elements: 110526
+End
+Extracted: 1000001
+Moved elements: 1110527
+Moved elements: 2110528
+Shutting down...
+
+Moved elements: 2110528
+In queue: 0
+9220.090 ops/s
+
+# Run progress: 23.33% complete, ETA 00:02:06
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+Extracted: 10070
+Extracted: 117319
+Moved elements: 10070
+Extracted: 562275
+Moved elements: 127389
+Extracted: 1000001
+End
+Moved elements: 689664
+Extracted: 1000001
+Moved elements: 1689665
+Moved elements: 2689666
+Shutting down...
+
+Moved elements: 2689666
+In queue: 0
+61281.191 ops/s
+
+# Run progress: 26.67% complete, ETA 00:02:00
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+Extracted: 10617
+Extracted: 114761
+Moved elements: 10617
+Extracted: 363942
+Moved elements: 125378
+Extracted: 1000001
+End
+Moved elements: 489320
+Extracted: 1000001
+Moved elements: 1489321
+Moved elements: 2489322
+<failure>
+
+java.lang.IndexOutOfBoundsException: Index: 127, Size: 126
+	at java.base/java.util.ArrayList.rangeCheckForAdd(ArrayList.java:787)
+	at java.base/java.util.ArrayList.add(ArrayList.java:512)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.insertChild(InternalNode.java:146)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.deleteValue(InternalNode.java:50)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.deleteValue(InternalNode.java:15)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.deleteValue(InternalNode.java:37)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.deleteValue(InternalNode.java:15)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.deleteValue(InternalNode.java:37)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.InternalNode.deleteValue(InternalNode.java:15)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.BPlussTree.delete(BPlussTree.java:34)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.BPlussTree.delete(BPlussTree.java:5)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.QueueBPlussTree.delete(QueueBPlussTree.java:70)
+	at no.ntnu.tdt4501.implementation.btree.inmemorylocks.QueueBPlussTree.delete(QueueBPlussTree.java:18)
+	at no.ntnu.tdt4501.benchmark.jmh.JMHBenchmark.runDeleteSync(JMHBenchmark.java:180)
+	at no.ntnu.tdt4501.benchmark.jmh.JMHBenchmark.delete(JMHBenchmark.java:93)
+	at no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.deleteTest(QueueBenchmark.java:51)
+	at no.ntnu.tdt4501.benchmark.jmh.inmemory.generated.QueueBenchmark_deleteTest_jmhTest.deleteTest_thrpt_jmhStub(QueueBenchmark_deleteTest_jmhTest.java:120)
+	at no.ntnu.tdt4501.benchmark.jmh.inmemory.generated.QueueBenchmark_deleteTest_jmhTest.deleteTest_Throughput(QueueBenchmark_deleteTest_jmhTest.java:83)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:453)
+	at org.openjdk.jmh.runner.BenchmarkHandler$BenchmarkTask.call(BenchmarkHandler.java:437)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+
+
+# Run progress: 30.00% complete, ETA 00:01:53
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+Extracted: 10051
+Extracted: 101896
+Moved elements: 10051
+Extracted: 833053
+Moved elements: 111947
+Extracted: 1000001
+End
+Moved elements: 945000
+Extracted: 1000001
+Moved elements: 1945001
+10610.494 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.deleteTest":
+  16481.237 ±(99.9%) 28430.836 ops/s [Average]
+  (min, avg, max) = (8879.912, 16481.237, 61281.191), stdev = 16918.735
+  CI (99.9%): [≈ 0, 44912.074] (assumes normal distribution)
+
+
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=53019:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.insertTest
+# Parameters: (threads = 16)
+
+# Run progress: 33.33% complete, ETA 00:01:48
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+Extracted: 10014
+Extracted: 97893
+Moved elements: 10014
+Extracted: 1000001
+Moved elements: 107907
+Extracted: 1000001
+End
+Moved elements: 1107908
+Extracted: 1000001
+4598676.856 ops/s
+
+# Run progress: 36.67% complete, ETA 00:01:46
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+Extracted: 10446
+Extracted: 116040
+Moved elements: 10446
+Extracted: 1000001
+Moved elements: 126486
+Extracted: 1000001
+End
+Moved elements: 1126487
+Extracted: 1000001
+4589218.355 ops/s
+
+# Run progress: 40.00% complete, ETA 00:01:42
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+Extracted: 10024
+Extracted: 90398
+Moved elements: 10024
+Extracted: 963948
+Moved elements: 100422
+Extracted: 1000001
+End
+Moved elements: 1064370
+Extracted: 1000001
+4972051.755 ops/s
+
+# Run progress: 43.33% complete, ETA 00:01:39
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+Extracted: 10102
+Extracted: 95751
+Moved elements: 10102
+Extracted: 1000001
+Moved elements: 105853
+Extracted: 1000001
+End
+Moved elements: 1105854
+Extracted: 1000001
+4855300.974 ops/s
+
+# Run progress: 46.67% complete, ETA 00:01:36
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+Extracted: 10062
+Extracted: 90112
+Moved elements: 10062
+Extracted: 845159
+Moved elements: 100174
+Extracted: 1000001
+End
+Moved elements: 945334
+Extracted: 1000001
+4878845.183 ops/s
+
+# Run progress: 50.00% complete, ETA 00:01:31
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+Extracted: 10123
+Extracted: 98045
+Moved elements: 10123
+Extracted: 1000001
+Moved elements: 108168
+Extracted: 1000001
+End
+Moved elements: 1108169
+Extracted: 1000001
+3096564.009 ops/s
+
+# Run progress: 53.33% complete, ETA 00:01:27
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+Extracted: 10010
+Extracted: 105120
+Moved elements: 10010
+Extracted: 1000001
+Moved elements: 115130
+Extracted: 1000001
+End
+Moved elements: 1115131
+Extracted: 1000001
+3878463.681 ops/s
+
+# Run progress: 56.67% complete, ETA 00:01:22
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+Extracted: 10588
+Extracted: 194837
+Moved elements: 10588
+Extracted: 539271
+Moved elements: 205425
+Extracted: 1000001
+End
+Moved elements: 744696
+Extracted: 1000001
+Moved elements: 1744697
+Extracted: 1000001
+2149754.360 ops/s
+
+# Run progress: 60.00% complete, ETA 00:01:18
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+Extracted: 11833
+Extracted: 101257
+Moved elements: 11833
+Extracted: 1000001
+Moved elements: 113090
+Extracted: 1000001
+End
+Moved elements: 1113091
+Extracted: 1000001
+3930194.331 ops/s
+
+# Run progress: 63.33% complete, ETA 00:01:13
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+Extracted: 10390
+Extracted: 99434
+Moved elements: 10390
+Extracted: 1000001
+Moved elements: 109824
+Extracted: 1000001
+End
+Moved elements: 1109825
+Extracted: 1000001
+4570356.401 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.insertTest":
+  4151942.590 ±(99.9%) 1380873.430 ops/s [Average]
+  (min, avg, max) = (2149754.360, 4151942.590, 4972051.755), stdev = 913362.276
+  CI (99.9%): [2771069.160, 5532816.020] (assumes normal distribution)
+
+
+# JMH version: 1.20
+# VM version: JDK 11.0.3, VM 11.0.3+12-LTS
+# VM invoker: /Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/bin/java
+# VM options: -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=53019:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8
+# Warmup: <none>
+# Measurement: 1 iterations, 3 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.searchTest
+# Parameters: (threads = 16)
+
+# Run progress: 66.67% complete, ETA 00:01:07
+# Fork: 1 of 10
+Iteration   1: New instance
+Start
+Extracted: 11676
+Extracted: 92071
+Moved elements: 11676
+Extracted: 1000001
+Moved elements: 103747
+Extracted: 1000001
+End
+Moved elements: 1103748
+Extracted: 739655
+Moved elements: 2103749
+Moved elements: 2843404
+Shutting down...
+
+Moved elements: 2843404
+In queue: 0
+54176.957 ops/s
+
+# Run progress: 70.00% complete, ETA 00:01:00
+# Fork: 2 of 10
+Iteration   1: New instance
+Start
+Extracted: 12093
+Extracted: 105844
+Moved elements: 12093
+Extracted: 1000001
+Moved elements: 117937
+Extracted: 1000001
+End
+Moved elements: 1117938
+Extracted: 1000001
+Moved elements: 2117939
+Moved elements: 3117940
+Shutting down...
+
+Moved elements: 3117940
+In queue: 0
+244117.959 ops/s
+
+# Run progress: 73.33% complete, ETA 00:00:53
+# Fork: 3 of 10
+Iteration   1: New instance
+Start
+Extracted: 10208
+Extracted: 157008
+Moved elements: 10208
+Extracted: 1000001
+Moved elements: 167216
+Extracted: 1000001
+End
+Moved elements: 1167217
+Extracted: 1000001
+Moved elements: 2167218
+Moved elements: 3167219
+Shutting down...
+
+Moved elements: 3167219
+In queue: 0
+35626.649 ops/s
+
+# Run progress: 76.67% complete, ETA 00:00:46
+# Fork: 4 of 10
+Iteration   1: New instance
+Start
+Extracted: 10258
+Extracted: 82459
+Moved elements: 10258
+Extracted: 213616
+Moved elements: 92717
+Extracted: 1000001
+Moved elements: 306333
+Extracted: 1000001
+End
+Moved elements: 1306334
+Extracted: 398850
+Moved elements: 2306335
+Moved elements: 2705185
+Shutting down...
+
+Moved elements: 2705185
+In queue: 0
+24277.073 ops/s
+
+# Run progress: 80.00% complete, ETA 00:00:39
+# Fork: 5 of 10
+Iteration   1: New instance
+Start
+Extracted: 10030
+Extracted: 100778
+Moved elements: 10030
+Extracted: 728146
+Moved elements: 110808
+Extracted: 1000001
+End
+Moved elements: 838954
+Extracted: 1000001
+Moved elements: 1838955
+Moved elements: 2838956
+Shutting down...
+
+Moved elements: 2838956
+In queue: 0
+35914.481 ops/s
+
+# Run progress: 83.33% complete, ETA 00:00:32
+# Fork: 6 of 10
+Iteration   1: New instance
+Start
+Extracted: 10061
+Extracted: 99401
+Moved elements: 10061
+Extracted: 566837
+Moved elements: 109462
+Extracted: 1000001
+End
+Moved elements: 676300
+Extracted: 1000001
+Moved elements: 1676301
+Moved elements: 2676302
+Shutting down...
+
+Moved elements: 2676302
+In queue: 0
+128449.108 ops/s
+
+# Run progress: 86.67% complete, ETA 00:00:26
+# Fork: 7 of 10
+Iteration   1: New instance
+Start
+Extracted: 10517
+Extracted: 93371
+Moved elements: 10517
+Extracted: 1000001
+Moved elements: 103888
+Extracted: 1000001
+End
+Moved elements: 1103889
+Extracted: 1000001
+Moved elements: 2103890
+24613.251 ops/s
+
+# Run progress: 90.00% complete, ETA 00:00:19
+# Fork: 8 of 10
+Iteration   1: New instance
+Start
+Extracted: 10018
+Extracted: 102498
+Moved elements: 10018
+Extracted: 1000001
+Moved elements: 112516
+Extracted: 1000001
+End
+Moved elements: 1112517
+Extracted: 1000001
+Moved elements: 2112518
+26502.392 ops/s
+
+# Run progress: 93.33% complete, ETA 00:00:12
+# Fork: 9 of 10
+Iteration   1: New instance
+Start
+Extracted: 10596
+Extracted: 83244
+Moved elements: 10596
+Extracted: 1000001
+Moved elements: 93840
+Extracted: 1000001
+End
+Moved elements: 1093841
+Extracted: 1000001
+Moved elements: 2093842
+21708.316 ops/s
+
+# Run progress: 96.67% complete, ETA 00:00:06
+# Fork: 10 of 10
+Iteration   1: New instance
+Start
+Extracted: 10804
+Extracted: 110068
+Moved elements: 10804
+Extracted: 262566
+Moved elements: 120872
+Extracted: 1000001
+Moved elements: 383439
+Extracted: 1000001
+End
+Moved elements: 1383440
+Extracted: 1000001
+Moved elements: 2383441
+28553.113 ops/s
+
+
+Result "no.ntnu.tdt4501.benchmark.jmh.inmemory.QueueBenchmark.searchTest":
+  62393.930 ±(99.9%) 107898.880 ops/s [Average]
+  (min, avg, max) = (21708.316, 62393.930, 244117.959), stdev = 71368.429
+  CI (99.9%): [≈ 0, 170292.810] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:03:11
+
+Benchmark                  (threads)   Mode  Cnt        Score         Error  Units
+QueueBenchmark.deleteTest         16  thrpt    9    16481.237 ±   28430.836  ops/s
+QueueBenchmark.insertTest         16  thrpt   10  4151942.590 ± 1380873.430  ops/s
+QueueBenchmark.searchTest         16  thrpt   10    62393.930 ±  107898.880  ops/s
+
+Process finished with exit code 0

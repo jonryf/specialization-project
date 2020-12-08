@@ -37,6 +37,21 @@ public class QueueBenchmark extends JMHBenchmark {
         insert(1000);
     }
 
+    @Threads(1)
+    @Benchmark
+    @OperationsPerInvocation(1000)
+    public void searchTest() {
+        search(1000);
+    }
+
+    @Threads(1)
+    @Benchmark
+    @OperationsPerInvocation(1000)
+    public void deleteTest() {
+        delete(1000);
+    }
+
+
 
     public static void main(String[] args) {
         JMHBenchmark.run(QueueBenchmark.class);
