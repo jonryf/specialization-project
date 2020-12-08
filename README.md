@@ -1,5 +1,5 @@
-# specialization-project
-## TDT4501 - Specialization Project
+# Specialization-project
+## NTNU - TDT4501 - Specialization Project
 
 
 In 1971, the B-tree data structure was invented. A couple of years after its creation, it was called ubiquitous. Now, almost 50 years later, the B-tree has kept its position as ubiquitous and has gained even more popularity due to the explosion of digitization in the past 50 years. Today, we find B-tree's typically in a wide range of databases, file systems, and operating systems. We indirectly interact with B-trees all the time. The B-tree was invented with the 1970s hardware in mind. Meanwhile, we have seen an emergence of new hardware and a massive increase in data volume. However, a small effort has been put into making the B-tree take advantage of the multi-core chips and the Non-volatile memory (NVM). With only a few modifications to the tree, it is still almost the same structure used today.
